@@ -1,0 +1,25 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+@mixin container-main($mw: 1170px) {
+  display: block;
+  margin: 35px auto;
+  max-width: $mw;
+  min-width: 320px;
+  width: 100%;
+}
+
+.main{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  @include container-main(calc(1240px + (#{$subline} * 3 * 2)));
+  padding: 0 calc(#{$subline} * 2);
+  @include mmin($laptop) {
+    padding: 0 calc(#{$subline} * 3);
+  };
+  @include mmin($phone) {
+    margin-top: 30px;
+  }
+}

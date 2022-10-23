@@ -1,0 +1,74 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+.section {
+  position: relative;
+  @include flc;
+  background-image: url('../../../img/banner_auth.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 10px;
+  padding: rem(100) calc(#{$subline} * 2);
+  @include mmin($laptop) {
+    padding: rem(100) calc(#{$subline} * 3);
+    background-image: url('../../../img/banner_auth_pad.png');
+  };
+
+  @include mmin-portrait($phone) {
+    background-image: url('../../../img/banner_auth_mob.png');
+  }
+
+  @include mmin($laptop) {
+    padding: rem(100) 0;
+  }
+}
+
+.title {
+  color: white;
+  text-align: center;
+  margin: 0;
+  margin-bottom: rem(25);
+}
+
+.inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  color: white;
+  text-align: center;
+
+  & > span {
+    display: block;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: 141.02%;
+    margin-bottom: rem(20);
+  }
+
+  @include mmin($laptop) {
+    @include dflex(center,nowrap,space-between);
+
+    & > span {
+      font-size: rem(18);
+      margin-bottom: 0;
+      text-align: left;
+      margin-right: rem(25);
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  @include mmin($laptop) {
+    font-size: rem(18);
+    width: auto;
+    min-width: rem(160);
+  }
+}
