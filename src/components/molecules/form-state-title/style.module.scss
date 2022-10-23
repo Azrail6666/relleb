@@ -1,0 +1,122 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+
+.title {
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.titleHidden {
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  @include mmin-portrait($phone) {
+    margin-top: 30px;
+  }
+  .formCounter {
+    background: rgba(39, 59, 74, 0.25);
+  }
+  div {
+    .mainTitleText {
+      color: rgba(39, 59, 74, 0.25);
+    }
+  }
+}
+
+.formCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3760EF;
+  border-radius: 100%;
+  font-size: 30px;
+  color: #FFF;
+  width: 46px;
+  height: 46px;
+  margin-right: 20px;
+  @include mmin-portrait($phone) {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.mainTitleText {
+  font-size: 40px;
+  color: #000;
+  @include mmin-portrait($phone) {
+    font-size: 24px;
+  }
+}
+
+.additionalData {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.additionalDataIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  img {
+    width: 100%;
+  }
+  @include mmin-portrait($phone) {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.additionalDataText {
+  font-size: 14px;
+  color: rgba(39, 59, 74, 0.5);
+  @include mmin-portrait($phone) {
+    font-size: 10px;
+  }
+}
+
+hr.hiddenLine {
+  width: 100%;
+  height: 2px;
+  background: rgba(39, 59, 74, 0.1);
+  border-radius: 1px;
+  margin: 30px 0;
+}
+
+.titleDiv {
+  display: flex;
+  @include mmin-portrait($phone) {
+    align-items: center;
+  }
+}
+.openFormButton {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  margin-left: 30px;
+  padding: 0;
+  @include mmin-portrait($phone) {
+    margin-left: 5px;
+  }
+  img {
+    width: 20px;
+    margin-right: 5px;
+    @include mmin-portrait($phone) {
+      width: 12px;
+    }
+  }
+  span {
+    font-size: 18px;
+    text-decoration-line: underline;
+    color: rgba(49, 67, 81, 0.75);
+    @include mmin-portrait($phone) {
+      display: none;
+    }
+  }
+}

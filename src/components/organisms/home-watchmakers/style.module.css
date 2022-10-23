@@ -1,0 +1,50 @@
+.section {
+  padding: calc((50 / 16 * 1rem)) 0; }
+  @media all and (min-width: 1024px) {
+    .section {
+      padding: calc((120 / 16 * 1rem)) 0 calc((100 / 16 * 1rem)); } }
+.title {
+  text-align: center;
+  margin: 0;
+  margin-bottom: calc((30 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .title {
+      text-align: left;
+      position: relative; }
+      .title:before {
+        content: '';
+        background: #3760ef;
+        width: calc((75 / 16 * 1rem));
+        height: calc((3 / 16 * 1rem));
+        display: block;
+        border-radius: calc((2 / 16 * 1rem));
+        position: absolute;
+        left: 0;
+        top: calc((-20 / 16 * 1rem)); } }
+.watchmakers {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  grid-template-rows: 1fr 1fr; }
+  @media all and (min-width: 768px) {
+    .watchmakers {
+      grid-template-rows: 1fr; } }
+.animation {
+  display: flex;
+  flex-wrap: nowrap; }
+  .animationWrap {
+    width: 100%;
+    overflow: hidden; }
+  .animation > div {
+    animation-name: animation-watchmakers;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+    @media all and (min-width: 768px) {
+      .animation > div {
+        animation-duration: 20s; } }
+@keyframes animation-watchmakers {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(-100%); } }

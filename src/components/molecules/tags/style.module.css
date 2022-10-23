@@ -1,0 +1,12 @@
+.tags {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center; }
+  .tags > div {
+    margin-right: calc((5 / 16 * 1rem)); }
+    @media all and (min-width: 1024px) {
+      .tags > div {
+        margin-right: calc((10 / 16 * 1rem)); } }
+    .tags > div:last-of-type {
+      margin-right: 0; }

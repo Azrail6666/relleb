@@ -1,0 +1,52 @@
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px; }
+  .paymentForm hr {
+    height: 2px;
+    background: rgba(39, 59, 74, 0.1);
+    border-radius: 1px;
+    margin: 20px 0; }
+
+.formButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #3760EF;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center; }
+
+.formAdditionalButtonInfo {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(39, 59, 74, 0.5);
+  margin-top: 10px; }
+
+.paymentVerified {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.securePayments {
+  display: flex;
+  align-items: center; }
+  .securePayments img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; }
+  .securePayments span {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(39, 59, 74, 0.5); }
+
+.paymentLogo {
+  width: 12%; }

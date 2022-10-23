@@ -1,0 +1,36 @@
+.button {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #3760EF;
+  border: 1px solid #3760EF;
+  box-shadow: 0 calc((4 / 16 * 1rem)) calc((40 / 16 * 1rem)) rgba(255, 255, 255, 0.15);
+  border-radius: calc((27 / 16 * 1rem));
+  padding: calc((10 / 16 * 1rem)) calc((15 / 16 * 1rem));
+  outline: 0;
+  cursor: auto;
+  font-family: "Poppins", sans-serif;
+  font-size: calc((14 / 16 * 1rem));
+  line-height: 150%;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.3s; }
+  .button:focus {
+    outline: none; }
+  .button:hover, .button:active, .button:focus {
+    opacity: 0.8; }
+  @media all and (min-width: 1379px) {
+    .button {
+      font-size: calc((20 / 16 * 1rem));
+      padding: calc((12 / 16 * 1rem)) calc((33 / 16 * 1rem));
+      cursor: pointer; } }

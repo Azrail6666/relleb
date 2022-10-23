@@ -1,0 +1,39 @@
+.figure {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+  .figure > div {
+    background: #c4c4c4;
+    border-radius: calc((10 / 16 * 1rem));
+    overflow: hidden;
+    position: relative;
+    height: 100%; }
+    .figure > div:before {
+      content: '';
+      width: 100%;
+      padding-bottom: 100%;
+      display: block; }
+      @media all and (min-width: 1024px) {
+        .figure > div:before {
+          padding-bottom: 50%; } }
+  .figure picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+    .figure picture > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block; }
+  .figure figcaption {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc((10 / 16 * 1rem));
+    line-height: 160.02%;
+    color: #c4c4c4;
+    margin: calc((10 / 16 * 1rem)) 0 0 0; }
+    @media all and (min-width: 1024px) {
+      .figure figcaption {
+        font-size: calc((16 / 16 * 1rem)); } }

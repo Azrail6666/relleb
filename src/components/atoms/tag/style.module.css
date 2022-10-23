@@ -1,0 +1,15 @@
+.tag {
+  background: #f8f9ff;
+  border-radius: calc((100 / 16 * 1rem));
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc((12 / 16 * 1rem));
+  line-height: 140.02%;
+  color: #3760ef;
+  text-align: center;
+  padding: calc((7 / 16 * 1rem)) calc((15 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .tag {
+      padding: calc((7 / 16 * 1rem)) calc((30 / 16 * 1rem));
+      font-size: calc((18 / 16 * 1rem)); } }

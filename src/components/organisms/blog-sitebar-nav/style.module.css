@@ -1,0 +1,16 @@
+.ul {
+  padding: 0;
+  margin: 0; }
+  .ul > li {
+    list-style-type: none;
+    margin-bottom: calc((15 / 16 * 1rem)); }
+    .ul > li:last-of-type {
+      margin-bottom: 0; }
+    .ul > li > a {
+      font-size: calc((15 / 16 * 1rem));
+      line-height: calc((22 / 16 * 1rem));
+      color: #314351;
+      text-decoration: none; }
+      .ul > li > a:hover {
+        text-decoration: underline;
+        color: #3760EF; }

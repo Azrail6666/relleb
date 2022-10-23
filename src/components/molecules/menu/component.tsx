@@ -13,21 +13,7 @@ const Menu: FC = () => {
   const menuArr = [
     {
       name: 'Authentication Service',
-      to: '/',
-      sub: [
-        {
-          name: 'submenu 1',
-          to: '/',
-        },
-        {
-          name: 'submenu 2',
-          to: '/',
-        },
-        {
-          name: 'submenu 3',
-          to: '/',
-        },
-      ],
+      to: '/authentication',
     },
     {
       name: 'Shop Watches',

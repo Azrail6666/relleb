@@ -1,0 +1,176 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../img/banner_auth.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 10px;
+  padding: calc((100 / 16 * 1rem)) calc(5px * 2); }
+  @media all and (min-width: 1024px) {
+    .section {
+      padding: calc((100 / 16 * 1rem)) calc(5px * 3);
+      background-image: url("../../../img/banner_auth_pad.png"); } }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .section {
+      background-image: url("../../../img/banner_auth_mob.png"); } }
+  @media all and (min-width: 1024px) {
+    .section {
+      padding: calc((100 / 16 * 1rem)) 0; } }
+.content {
+  display: flex;
+  padding: 25px;
+  border: 1px solid rgba(39, 59, 74, 0.1);
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 100px; }
+  @media all and (min-width: 1024px) {
+    .content {
+      padding: 40px; } }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+      border: none; } }
+.guaranteedIcon {
+  padding: 10px;
+  width: 75px;
+  height: 75px;
+  border: 1px solid #E9EBED;
+  border-radius: 100%; }
+  @media all and (min-width: 1024px) {
+    .guaranteedIcon {
+      padding: 12.5px;
+      width: 100px;
+      height: 100px; } }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .guaranteedIcon {
+      padding: 7.5px;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px; } }
+  .guaranteedIcon img {
+    width: 55px; }
+    @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+      .guaranteedIcon img {
+        width: 45px; } }
+    @media all and (min-width: 1024px) {
+      .guaranteedIcon img {
+        width: 75px; } }
+.mainInfo {
+  display: flex;
+  flex-direction: column; }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .mainInfo {
+      align-items: center; } }
+.title {
+  font-size: 18px;
+  max-width: 220px;
+  color: #273B4A; }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .title {
+      text-align: center;
+      font-size: 14px; } }
+  @media all and (min-width: 1024px) {
+    .title {
+      font-size: 21px;
+      max-width: 240px; } }
+.blueTitle {
+  font-weight: 500;
+  color: #3760EF; }
+
+.additionalInfo {
+  font-size: 12px;
+  color: rgba(39, 59, 74, 0.5);
+  max-width: 350px;
+  margin-top: 15px; }
+  @media all and (min-width: 1024px) {
+    .additionalInfo {
+      font-size: 14px;
+      max-width: 750px; } }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .additionalInfo {
+      text-align: center;
+      font-size: 10px;
+      margin-top: 10px;
+      margin-bottom: 30px; } }
+.chatButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  cursor: pointer; }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .chatButton {
+      margin-top: 15px; } }
+.chatIcon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px; }
+  .chatIcon img {
+    width: 100%; }
+
+.chatButtonText {
+  font-weight: bolder;
+  font-size: calc((14 / 16 * 1rem));
+  color: #3760EF; }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .chatButtonText {
+      font-size: 14px; } }
+  @media all and (min-width: 1024px) {
+    .chatButtonText {
+      font-size: calc((16 / 16 * 1rem)); } }
+.questionsMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .questionsMenu {
+      margin-top: 30px; } }
+.mobileLine {
+  display: none; }
+  @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+    .mobileLine {
+      display: block;
+      background: #E9EBED; } }
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.info {
+  color: white;
+  text-align: center; }
+  .info > span {
+    display: block;
+    font-weight: 400;
+    font-size: calc((14 / 16 * 1rem));
+    line-height: 141.02%;
+    margin-bottom: calc((20 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-items: center; }
+      .info > span {
+        font-size: calc((18 / 16 * 1rem));
+        margin-bottom: 0;
+        text-align: left;
+        margin-right: calc((25 / 16 * 1rem)); } }
+.button {
+  width: 100%; }
+  @media all and (min-width: 1024px) {
+    .button {
+      font-size: calc((18 / 16 * 1rem));
+      width: auto;
+      min-width: calc((160 / 16 * 1rem)); } }

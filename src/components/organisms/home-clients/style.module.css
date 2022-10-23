@@ -1,0 +1,125 @@
+.section {
+  padding: calc((50 / 16 * 1rem)) 0;
+  background: #f8f9ff; }
+  @media all and (min-width: 1024px) {
+    .section {
+      padding: calc((100 / 16 * 1rem)) 0; } }
+.title {
+  text-align: center;
+  margin: 0;
+  margin-bottom: calc((30 / 16 * 1rem)); }
+
+.slider {
+  --swiper-pagination-bullet-width: calc((5 / 16 * 1rem));
+  --swiper-pagination-bullet-height: calc((5 / 16 * 1rem));
+  --swiper-pagination-bullet-inactive-color: #9BAFF7;
+  --swiper-pagination-color: #3760EF;
+  position: relative;
+  margin-bottom: calc((30 / 16 * 1rem)); }
+  @media all and (min-width: 768px) {
+    .slider {
+      --swiper-pagination-bullet-inactive-color: transparent;
+      --swiper-pagination-color: transparent;
+      margin-bottom: calc((30 / 16 * 1rem)); } }
+.navigation {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(calc((-25 / 16 * 1rem)));
+  display: none; }
+  @media all and (min-width: 1379px) {
+    .navigation {
+      display: block; } }
+  .navigation > svg:first-child {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: calc((30 / 16 * 1rem));
+    height: calc((30 / 16 * 1rem));
+    margin: calc((10 / 16 * 1rem));
+    margin-left: calc((-60 / 16 * 1rem));
+    cursor: auto;
+    opacity: 1;
+    transition: opacity 0.3s; }
+    .navigation > svg:first-child > circle {
+      stroke: #3760EF; }
+    .navigation > svg:first-child > path {
+      fill: #3760EF; }
+    @media all and (min-width: 1379px) {
+      .navigation > svg:first-child {
+        cursor: pointer; } }
+    .navigation > svg:first-child:hover {
+      opacity: 0.7; }
+  .navigation > svg:last-child {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: calc((30 / 16 * 1rem));
+    height: calc((30 / 16 * 1rem));
+    margin: calc((10 / 16 * 1rem));
+    margin-right: calc((-60 / 16 * 1rem));
+    cursor: auto;
+    opacity: 1;
+    transition: opacity 0.3s; }
+    .navigation > svg:last-child > circle {
+      stroke: #3760EF; }
+    .navigation > svg:last-child > path {
+      fill: #3760EF; }
+    @media all and (min-width: 1379px) {
+      .navigation > svg:last-child {
+        cursor: pointer; } }
+    .navigation > svg:last-child:hover {
+      opacity: 0.7; }
+
+.trustpilot {
+  text-align: center;
+  font-weight: 400;
+  font-size: calc((12 / 16 * 1rem));
+  line-height: 150%; }
+  .trustpilot > div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: calc((10 / 16 * 1rem)); }
+    @media all and (min-width: 768px) {
+      .trustpilot > div:first-child {
+        margin-bottom: 0;
+        margin-right: calc((20 / 16 * 1rem)); } }
+  @media all and (min-width: 768px) {
+    .trustpilot {
+      font-size: calc((16 / 16 * 1rem));
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; } }
+.trustpilotImage {
+  background-image: url("/img/trustpilot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: calc((72 / 16 * 1rem));
+  height: calc((20 / 16 * 1rem));
+  display: block;
+  margin-right: calc((15 / 16 * 1rem)); }
+  @media all and (min-width: 768px) {
+    .trustpilotImage {
+      margin-right: calc((20 / 16 * 1rem));
+      width: calc((100 / 16 * 1rem));
+      height: calc((26 / 16 * 1rem)); } }
+.trustpilotRating {
+  display: flex; }
+  .trustpilotRating > svg {
+    display: block;
+    width: calc((16 / 16 * 1rem));
+    height: calc((16 / 16 * 1rem));
+    margin-left: calc((5 / 16 * 1rem)); }
+    .trustpilotRating > svg:first-child {
+      margin-left: 0; }
+    @media all and (min-width: 768px) {
+      .trustpilotRating > svg {
+        width: calc((22 / 16 * 1rem));
+        height: calc((22 / 16 * 1rem)); } }
+    .trustpilotRating > svg > rect {
+      fill: #3760EF !important; }
+    .trustpilotRating > svg > path {
+      fill: white !important; }

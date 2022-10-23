@@ -1,0 +1,134 @@
+.modal {
+  position: relative;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(-100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #6da9ef 66.67%, #3760ef 95.83%); }
+  @media all and (min-width: 1024px) {
+    .modal {
+      background: linear-gradient(270deg, #3760ef 61.46%, #6da9ef 100%); } }
+  .modalLight {
+    background: linear-gradient(270deg, #e2e7fd 6.42%, #ffffff 43.29%, #e2e7fd 89.69%); }
+
+.active {
+  transform: translateY(0);
+  height: calc((100 / 16 * 1rem));
+  pointer-events: auto; }
+
+.inner {
+  width: 100%;
+  padding: 0 calc((10 / 16 * 1rem));
+  display: block;
+  margin: 0 auto;
+  max-width: calc(1240px + (5px * 3 * 2));
+  min-width: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center; }
+  @media all and (min-width: 1024px) {
+    .inner {
+      padding: 0 calc(5px * 3);
+      justify-content: center; } }
+.close {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  cursor: pointer;
+  cursor: pointer;
+  width: calc((30 / 16 * 1rem));
+  height: calc((30 / 16 * 1rem));
+  padding: calc((10 / 16 * 1rem));
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .close:focus {
+    outline: none; }
+  @media all and (min-width: 1024px) {
+    .close {
+      position: relative;
+      width: calc((45 / 16 * 1rem));
+      height: calc((45 / 16 * 1rem)); } }
+  .close > svg {
+    width: 100%;
+    height: 100%; }
+    .close > svg > circle {
+      stroke: white; }
+    .close > svg > path {
+      stroke: white; }
+  .closeLight > svg > circle {
+    fill: white;
+    stroke: none; }
+  .closeLight > svg > path {
+    stroke: black; }
+
+.button {
+  height: calc((40 / 16 * 1rem));
+  font-weight: 500;
+  font-size: calc((14 / 16 * 1rem));
+  line-height: calc((21 / 16 * 1rem));
+  color: #f8f9ff;
+  border: calc((1 / 16 * 1rem)) solid #ffffff;
+  background: transparent;
+  min-width: max-content; }
+  @media all and (min-width: 1024px) {
+    .button {
+      height: calc((50 / 16 * 1rem));
+      min-width: calc((130 / 16 * 1rem));
+      font-size: calc((19 / 16 * 1rem));
+      margin-right: calc((50 / 16 * 1rem)); } }
+  .buttonLight {
+    border: 0;
+    background: #3760ef; }
+
+.content {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc((16 / 16 * 1rem));
+  line-height: calc((24 / 16 * 1rem));
+  color: #ffffff;
+  margin-right: calc((24 / 16 * 1rem));
+  max-width: 40%;
+  padding-left: calc((10 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .content {
+      font-size: calc((25 / 16 * 1rem));
+      line-height: calc((38 / 16 * 1rem));
+      margin: 0 calc((35 / 16 * 1rem));
+      padding: 0; } }
+  .contentLight {
+    color: black; }
+
+.contentImg {
+  margin-left: calc((80 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .contentImg {
+      margin-left: calc((20 / 16 * 1rem)); } }
+.img {
+  position: absolute;
+  left: 0;
+  transform: translateX(-40%); }
+  @media all and (min-width: 1024px) {
+    .img {
+      position: relative;
+      transform: translateX(0); } }
+  .img > img {
+    width: 100%;
+    height: 100%;
+    display: block; }

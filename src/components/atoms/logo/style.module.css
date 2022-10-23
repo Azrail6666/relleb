@@ -1,0 +1,16 @@
+.logo {
+  text-decoration: none;
+  display: block;
+  width: 84px; }
+  @media all and (min-width: 1024px) {
+    .logo {
+      width: 100px; } }
+  @media all and (min-width: 1379px) {
+    .logo {
+      cursor: pointer; } }
+  .logo > img {
+    width: 100%;
+    display: block; }
+
+.logoInvert > img {
+  filter: invert(100%); }

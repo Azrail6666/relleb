@@ -1,0 +1,31 @@
+.ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%; }
+  .ul > li {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    list-style-type: none;
+    font-weight: 400;
+    font-size: calc((14 / 16 * 1rem));
+    line-height: 140.02%;
+    color: #314351;
+    margin-bottom: calc((20 / 16 * 1rem)); }
+    @media all and (min-width: 1024px) {
+      .ul > li {
+        font-size: calc((16 / 16 * 1rem)); } }
+    .ul > li::last-of-type {
+      margin-bottom: 0; }
+    .ul > li > svg {
+      min-width: calc((20 / 16 * 1rem));
+      height: calc((20 / 16 * 1rem));
+      margin-right: calc((12 / 16 * 1rem));
+      display: block; }
+      @media all and (min-width: 1024px) {
+        .ul > li > svg {
+          min-width: calc((20 / 16 * 1rem));
+          height: calc((20 / 16 * 1rem));
+          margin-right: calc((15 / 16 * 1rem)); } }

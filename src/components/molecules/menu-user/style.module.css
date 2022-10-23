@@ -1,0 +1,32 @@
+.menuUser {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0;
+  margin: 0; }
+  @media all and (min-width: 1379px) {
+    .menuUser {
+      flex-direction: row-reverse;
+      margin-left: calc((30 / 16 * 1rem)); } }
+  .menuUser > li {
+    list-style-type: none;
+    margin-left: calc((10 / 16 * 1rem));
+    padding: 0 calc((10 / 16 * 1rem)); }
+    .menuUser > li > a {
+      position: relative; }
+      .menuUser > li > a > span {
+        width: calc((12 / 16 * 1rem));
+        height: calc((12 / 16 * 1rem));
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: #3760EF;
+        color: white;
+        font-size: calc((8 / 16 * 1rem));
+        line-height: 0;
+        border-radius: 50%;
+        position: absolute;
+        right: calc((-10 / 16 * 1rem));
+        bottom: calc((-2 / 16 * 1rem)); }

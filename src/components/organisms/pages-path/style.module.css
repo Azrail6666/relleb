@@ -1,0 +1,20 @@
+div.pagesPath {
+  display: flex;
+  align-items: center; }
+  div.pagesPath .arrow {
+    width: 16px;
+    height: 16px;
+    margin: 0 7px; }
+  div.pagesPath a {
+    font-size: calc((16 / 16 * 1rem));
+    text-decoration: none; }
+    @media all and (min-width: 320px) and (min-height: 0px) and (orientation: portrait) {
+      div.pagesPath a {
+        font-size: calc((10 / 16 * 1rem)); } }
+  div.pagesPath a:not(:last-child) {
+    color: #273B4A;
+    cursor: pointer; }
+  div.pagesPath a:not(:last-child):hover {
+    color: #007aff; }
+  div.pagesPath a:last-child {
+    color: rgba(49, 67, 81, 0.5); }

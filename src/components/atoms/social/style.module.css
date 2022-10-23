@@ -1,0 +1,12 @@
+.social {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0; }
+  .social > li {
+    list-style-type: none;
+    padding-right: calc((10 / 16 * 1rem)); }
+    .social > li > a > svg {
+      display: block; }

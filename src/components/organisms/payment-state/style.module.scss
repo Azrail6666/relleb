@@ -1,0 +1,70 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  hr {
+    height: 2px;
+    background: rgba(39, 59, 74, 0.1);
+    border-radius: 1px;
+    margin: 20px 0;
+  }
+}
+
+.formButton {
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #3760EF;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 15px 0;
+  cursor: pointer;
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+  @include mmin-portrait($phone) {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+
+.formAdditionalButtonInfo {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: rgba(39, 59, 74, 0.5);
+  margin-top: 10px;
+}
+
+.paymentVerified {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.securePayments {
+  display: flex;
+  align-items: center;
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  span {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(39, 59, 74, 0.5);
+  }
+}
+
+.paymentLogo {
+  width: 12%;
+}

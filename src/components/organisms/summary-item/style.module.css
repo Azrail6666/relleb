@@ -1,0 +1,51 @@
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(39, 59, 74, 0.1);
+  border-radius: 5px;
+  padding: 40px; }
+
+.title {
+  font-weight: 500;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 30px; }
+
+.servicesList {
+  display: flex;
+  flex-direction: column; }
+
+.serviceItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; }
+  .serviceItem span {
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(49, 67, 81, 0.75); }
+
+.totalItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px; }
+  .totalItem span {
+    font-weight: 600;
+    font-size: 20px; }
+
+.totalTitle {
+  color: #273B4A; }
+
+.totalValue {
+  color: #3760EF; }
+
+.summaryAdditionalInfo {
+  display: flex;
+  align-items: center; }
+  .summaryAdditionalInfo img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px; }
+  .summaryAdditionalInfo span {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(39, 59, 74, 0.5); }

@@ -1,0 +1,72 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+.additionalInfo {
+  padding: 40px;
+  border: 2px solid rgba(39, 59, 74, 0.1);
+  border-radius: 5px;
+  @include mmin-portrait($phone) {
+    padding: 0;
+    border: none;
+  }
+  hr {
+    height: 2px;
+    background: rgba(39, 59, 74, 0.1);
+    border-radius: 1px;
+    margin: 30px 0;
+    @include mmin-portrait($phone) {
+      display: none;
+    }
+  }
+}
+
+.additionalInfoTitle {
+  font-weight: 500;
+  color: #000;
+  font-size: 18px;
+  @include mmin($laptop) {
+    font-size: 24px;
+  }
+  @include mmin-portrait($phone) {
+    font-size: 16px;
+  }
+}
+
+.infoData {
+  display: flex;
+  flex-direction: column;
+  @include mmin-portrait($phone) {
+    background: #F8F9FF;
+    border-radius: 5px;
+    padding: 20px 15px;
+  }
+}
+
+.list {
+  padding-left: 14px;
+  @include mmin($laptop) {
+    padding-left: 20px;
+  }
+  @include mmin-portrait($phone) {
+    padding-left: 10px;
+  }
+  li {
+    @include mmin-portrait($phone) {
+      font-size: 10px;
+    }
+    @include mmin($laptop) {
+      font-size: 18px;
+    }
+    font-size: 14px;
+    color: rgba(49, 67, 81, 0.75);
+    margin-bottom: 15px;
+    a {
+      cursor: pointer;
+      color: #3760EF;
+    }
+  }
+
+  li::marker {
+    color: #3760EF;
+  }
+}

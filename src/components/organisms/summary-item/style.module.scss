@@ -1,0 +1,127 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(39, 59, 74, 0.1);
+  border-radius: 5px;
+  padding: 30px;
+  @include mmin($laptop) {
+    padding: 40px;
+  }
+  @include mmin-portrait($phone) {
+    padding: 20px 15px;
+  }
+  hr {
+    margin-bottom: 25px;
+    @include mmin($laptop) {
+      margin-bottom: 30px;
+    }
+    @include mmin-portrait($phone) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.title {
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 30px;
+  font-size: 18px;
+  @include mmin($laptop) {
+    font-size: 24px;
+  }
+  @include mmin-portrait($phone) {
+    font-size: 16px;
+  }
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  @include mmin-portrait($phone) {
+    margin-bottom: 15px;
+  }
+  span {
+    font-weight: 400;
+    font-size: 14px;
+    @include mmin($laptop) {
+      font-size: 18px;
+    }
+    color: rgba(49, 67, 81, 0.75);
+    @include mmin-portrait($phone) {
+      font-size: 12px;
+    }
+  }
+}
+
+.totalItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  @include mmin($laptop) {
+    margin-bottom: 30px;
+  }
+  @include mmin-portrait($phone) {
+    margin-bottom: 20px;
+  }
+  span {
+    font-weight: 600;
+    font-size: 16px;
+    @include mmin($laptop) {
+      font-size: 20px;
+    }
+    @include mmin-portrait($phone) {
+      font-size: 12px;
+    }
+  }
+}
+
+.totalTitle {
+  color: #273B4A;
+}
+
+.totalValue {
+  color: #3760EF;
+}
+
+.summaryAdditionalInfo {
+  display: flex;
+  align-items: flex-start;
+  @include mmin($laptop) {
+    align-items: center;
+  }
+  img {
+    width: 12px;
+    height: 12px;
+    @include mmin($laptop) {
+      width: 15px;
+      height: 15px;
+    }
+    margin-right: 10px;
+    @include mmin-portrait($phone) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  span {
+    font-weight: 400;
+    font-size: 12px;
+    @include mmin($laptop) {
+      font-size: 14px;
+    }
+    color: rgba(39, 59, 74, 0.5);
+    @include mmin-portrait($phone) {
+      font-size: 10px;
+    }
+  }
+}
+
+

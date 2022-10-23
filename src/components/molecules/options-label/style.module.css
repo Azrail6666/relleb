@@ -1,0 +1,76 @@
+.formSelectOptions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px; }
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #273B4A; }
+
+.selectableOptions {
+  display: flex;
+  flex-direction: column; }
+
+.selectableOption {
+  background: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  border: 2px solid rgba(49, 67, 81, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px; }
+
+.selectableOptionActive {
+  background: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 25px;
+  border: 2px solid #3760EF;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px; }
+
+.selectableOptionPrice {
+  font-weight: 600;
+  font-size: 18px;
+  color: #3760EF; }
+
+.valueSelected {
+  font-weight: 400;
+  font-size: 18px;
+  color: #273B4A; }
+
+.value {
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(49, 67, 81, 0.75); }
+
+.selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3760EF;
+  border-radius: 100%;
+  margin-right: 15px; }
+  .selected div {
+    background: #3760EF;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px; }
+
+.noSelected {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3760EF;
+  border-radius: 100%;
+  margin-right: 15px; }
+
+.selectTitle {
+  display: flex; }

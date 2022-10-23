@@ -1,0 +1,243 @@
+.footer {
+  background: black;
+  color: white; }
+
+.header {
+  padding: calc((50 / 16 * 1rem)) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%; }
+  @media all and (min-width: 768px) {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-items: center; } }
+  .header > h5 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc((16 / 16 * 1rem));
+    line-height: 140.02%;
+    text-align: center;
+    max-width: calc((200 / 16 * 1rem));
+    margin: 0 auto calc((30 / 16 * 1rem)); }
+    .header > h5 > span {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: calc((14 / 16 * 1rem));
+      line-height: 140.02%;
+      padding-top: calc((15 / 16 * 1rem)); }
+    @media all and (min-width: 768px) {
+      .header > h5 {
+        text-align: left;
+        font-size: calc((18 / 16 * 1rem));
+        max-width: inherit;
+        margin: 0; }
+        .header > h5 > span {
+          font-size: calc((16 / 16 * 1rem)); } }
+@media all and (min-width: 768px) {
+  .subscribe {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: calc((20 / 16 * 1rem)); } }
+
+.subscribeInput {
+  width: 100%;
+  margin-bottom: calc((15 / 16 * 1rem)); }
+  @media all and (min-width: 768px) {
+    .subscribeInput {
+      margin-bottom: 0; } }
+  @media all and (min-width: 1024px) {
+    .subscribeInput {
+      min-width: calc((390 / 16 * 1rem)); } }
+  .subscribeInput > input {
+    height: calc((40 / 16 * 1rem));
+    width: 100%;
+    background: white;
+    color: #838485;
+    border: 1px solid white;
+    outline: none;
+    transition: border 0.3s ease; }
+    .subscribeInput > input:focus {
+      border: 1px solid #3760EF; }
+    .subscribeInput > input::placeholder {
+      color: #838485; }
+    @media all and (min-width: 768px) {
+      .subscribeInput > input {
+        height: calc((50 / 16 * 1rem));
+        font-size: calc((18 / 16 * 1rem)); }
+        .subscribeInput > input::placeholder {
+          font-size: calc((18 / 16 * 1rem)); } }
+.subscribeButton {
+  height: calc((40 / 16 * 1rem));
+  width: 100%;
+  border: 1px solid #FFFFFF;
+  background: transparent;
+  color: white; }
+  @media all and (min-width: 768px) {
+    .subscribeButton {
+      width: auto;
+      margin-left: calc((20 / 16 * 1rem));
+      height: calc((50 / 16 * 1rem));
+      font-size: calc((18 / 16 * 1rem)); } }
+.main {
+  padding: calc((50 / 16 * 1rem)) 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start; }
+
+.logo {
+  width: calc((100% / 2) - calc((20 / 16 * 1rem)));
+  margin-bottom: calc((30 / 16 * 1rem)); }
+  @media all and (min-width: 1379px) {
+    .logo {
+      width: calc((100% / 5) - calc((100 / 16 * 1rem)));
+      min-width: calc((260 / 16 * 1rem));
+      margin-bottom: 0;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; } }
+  .logo > span {
+    display: block;
+    margin: calc((15 / 16 * 1rem)) 0 calc((25 / 16 * 1rem));
+    font-weight: 400;
+    font-size: calc((12 / 16 * 1rem));
+    line-height: 140%; }
+    @media all and (min-width: 768px) {
+      .logo > span {
+        font-size: calc((18 / 16 * 1rem)); } }
+.address {
+  width: calc((100% / 2) - calc((20 / 16 * 1rem)));
+  margin-bottom: calc((30 / 16 * 1rem));
+  font-family: "Poppins", sans-serif;
+  font-size: calc((12 / 16 * 1rem));
+  line-height: 140%;
+  color: #838485; }
+  @media all and (min-width: 1379px) {
+    .address {
+      width: calc((100% / 5) - calc((100 / 16 * 1rem)));
+      min-width: calc((230 / 16 * 1rem));
+      margin-bottom: 0; } }
+  @media all and (min-width: 768px) {
+    .address {
+      font-size: calc((16 / 16 * 1rem)); } }
+  .address span {
+    font-weight: 600;
+    color: white !important;
+    display: block; }
+  .address > div:first-of-type {
+    margin-bottom: calc((20 / 16 * 1rem)); }
+  .address a {
+    text-decoration: none;
+    color: #838485; }
+    .address a:hover {
+      text-decoration: underline; }
+
+.nav {
+  width: calc((100% / 2) - calc((20 / 16 * 1rem)));
+  margin-bottom: calc((30 / 16 * 1rem)); }
+  @media all and (min-width: 1379px) {
+    .nav {
+      width: calc((100% / 5) - calc((100 / 16 * 1rem)));
+      min-width: calc((190 / 16 * 1rem));
+      margin-bottom: 0; } }
+  .nav > ul {
+    margin: 0;
+    padding: 0; }
+    .nav > ul > li {
+      list-style-type: none; }
+      .nav > ul > li > a {
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: calc((12 / 16 * 1rem));
+        line-height: 150%;
+        text-decoration: none; }
+        .nav > ul > li > a:hover {
+          text-decoration: underline; }
+      @media all and (min-width: 768px) {
+        .nav > ul > li {
+          margin-bottom: calc((15 / 16 * 1rem)); }
+          .nav > ul > li:last-of-type {
+            margin-bottom: 0; }
+          .nav > ul > li > a {
+            font-size: calc((16 / 16 * 1rem)); } }
+.trustpilot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: calc((30 / 16 * 1rem));
+  align-self: flex-end; }
+  @media all and (min-width: 1379px) {
+    .trustpilot {
+      width: calc((100% / 5) - calc((100 / 16 * 1rem)));
+      margin-bottom: 0; } }
+  .trustpilot a {
+    text-decoration: none; }
+  .trustpilotCount {
+    font-weight: 500;
+    font-size: calc((12 / 16 * 1rem));
+    line-height: 140.02%;
+    color: #838485;
+    text-align: center;
+    margin-bottom: calc((5 / 16 * 1rem)); }
+    .trustpilotCount > span {
+      display: none; }
+    @media all and (min-width: 768px) {
+      .trustpilotCount {
+        font-size: calc((14 / 16 * 1rem)); }
+        .trustpilotCount > span {
+          display: inline-block; } }
+  .trustpilotImg {
+    background-image: url("/img/trustpilot_f.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin: 0 auto;
+    width: calc((100 / 16 * 1rem));
+    height: calc((40 / 16 * 1rem)); }
+    @media all and (min-width: 768px) {
+      .trustpilotImg {
+        width: calc((150 / 16 * 1rem));
+        height: calc((61 / 16 * 1rem)); } }
+.copy {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: calc((30 / 16 * 1rem)) 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc((12 / 16 * 1rem));
+  line-height: 140.02%;
+  color: #838485; }
+  @media all and (min-width: 768px) {
+    .copy {
+      font-size: calc((16 / 16 * 1rem));
+      padding: calc((100 / 16 * 1rem)) 0 calc((35 / 16 * 1rem)); } }
+.copySelect {
+  margin-left: calc((20 / 16 * 1rem)); }
+  .copySelect > select {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc((13 / 16 * 1rem)); }
+    @media all and (min-width: 768px) {
+      .copySelect > select {
+        font-size: calc((16 / 16 * 1rem)); } }
+  .copySelect svg {
+    fill: #838485; }
+  .copySelect select {
+    color: #838485 !important; }
+    .copySelect select option {
+      color: #838485 !important; }

@@ -1,0 +1,140 @@
+.modal {
+  position: fixed;
+  z-index: 60;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, 100%);
+  transition: 0.3s ease; }
+  @media all and (min-width: 1024px) {
+    .modal {
+      display: block;
+      margin: 0 auto;
+      max-width: calc(1240px + (5px * 3 * 2));
+      min-width: 320px;
+      width: 100%;
+      padding: 0 calc(5px * 3); } }
+.active {
+  transform: translate(-50%, 0); }
+
+.inner {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  min-height: calc((70 / 16 * 1rem));
+  padding: calc((10 / 16 * 1rem)) calc((10 / 16 * 1rem)) calc((5 / 16 * 1rem));
+  background: #ffffff;
+  box-shadow: 0px calc((4 / 16 * 1rem)) calc((19 / 16 * 1rem)) rgba(49, 67, 81, 0.2);
+  border-radius: calc((10 / 16 * 1rem)) calc((10 / 16 * 1rem)) 0px 0px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  .inner:focus {
+    outline: none; }
+
+.content {
+  position: absolute;
+  bottom: 0;
+  z-index: 61;
+  transform: translateY(100%);
+  transition: 0.3s ease;
+  width: 100%;
+  background: #f8f9ff;
+  border: calc((1 / 16 * 1rem)) solid #e2e7fd;
+  border-radius: calc((10 / 16 * 1rem)) calc((10 / 16 * 1rem)) 0px 0px;
+  padding: calc((30 / 16 * 1rem)) calc((16 / 16 * 1rem)) 0; }
+  .contentWrap {
+    width: 100%;
+    position: relative; }
+  .content::before {
+    content: '';
+    width: calc((60 / 16 * 1rem));
+    height: calc((2 / 16 * 1rem));
+    background: #3760ef;
+    border-radius: calc((14 / 16 * 1rem));
+    margin: 0 auto;
+    display: block; }
+  .contentClose {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc((10 / 16 * 1rem));
+    line-height: 140.02%;
+    color: #c4c4c4;
+    margin: 0 auto;
+    padding: calc((8 / 16 * 1rem)) 0; }
+    .contentClose:focus {
+      outline: none; }
+    .contentClose > svg {
+      margin-right: calc((5 / 16 * 1rem)); }
+
+.open {
+  transform: translateY(0); }
+
+.close {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  padding: calc((10 / 16 * 1rem)); }
+  .close:focus {
+    outline: none; }
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc((14 / 16 * 1rem));
+  line-height: calc((21 / 16 * 1rem));
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: column; }
+  .titleBlue {
+    color: #3760ef; }
+  .title::before {
+    content: '';
+    width: calc((9 / 16 * 1rem));
+    height: calc((5 / 16 * 1rem));
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L4.5 1L8 4' stroke='%233760EF'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    top: calc((10 / 16 * 1rem)); }
+  .title::after {
+    content: '';
+    width: calc((115 / 16 * 1rem));
+    height: calc((3 / 16 * 1rem));
+    background: #000000;
+    border-radius: calc((2.5 / 16 * 1rem));
+    display: block;
+    position: absolute;
+    bottom: calc((10 / 16 * 1rem)); }

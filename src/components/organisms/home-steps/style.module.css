@@ -1,0 +1,26 @@
+.section {
+  padding: calc((50 / 16 * 1rem)) 0 0; }
+  @media all and (min-width: 1024px) {
+    .section {
+      padding: calc((100 / 16 * 1rem)) 0 0; } }
+.title {
+  text-align: center;
+  margin: 0;
+  margin-bottom: calc((30 / 16 * 1rem)); }
+
+@media all and (min-width: 768px) {
+  .inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; } }
+
+.inner > div {
+  margin-bottom: calc((25 / 16 * 1rem)); }
+  @media all and (min-width: 768px) {
+    .inner > div {
+      margin-bottom: 0;
+      width: calc((100% / 3) - 5px * 2); } }
+  @media all and (min-width: 1379px) {
+    .inner > div {
+      margin-bottom: 0;
+      width: calc((100% / 3) - (5px * 2 * 2)); } }

@@ -1,0 +1,35 @@
+.item {
+  width: calc((65 / 16 * 1rem));
+  height: calc((65 / 16 * 1rem));
+  margin: calc((7 / 16 * 1rem));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  @media all and (min-width: 768px) {
+    .item {
+      width: calc((150 / 16 * 1rem));
+      height: calc((150 / 16 * 1rem));
+      margin: calc((12 / 16 * 1rem)); } }
+.itemInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: calc((1 / 16 * 1rem)) solid #E8E8E8;
+  padding: calc((15 / 16 * 1rem));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  @media all and (min-width: 768px) {
+    .itemInner {
+      padding: calc((55 / 16 * 1rem)) calc((38 / 16 * 1rem)); } }
+.picture {
+  width: 100%;
+  height: 100%;
+  display: block; }
+  .picture > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block; }

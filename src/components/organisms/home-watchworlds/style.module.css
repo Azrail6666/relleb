@@ -1,0 +1,94 @@
+.section {
+  padding: calc((50 / 16 * 1rem)) 0 calc((50 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .section {
+      padding: calc((120 / 16 * 1rem)) 0 calc((100 / 16 * 1rem)); } }
+.inner {
+  position: relative; }
+  @media all and (min-width: 1024px) {
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: flex-start; } }
+.title {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: calc((30 / 16 * 1rem));
+  max-width: 70%; }
+  @media all and (min-width: 1024px) {
+    .title {
+      margin: 0;
+      text-align: left;
+      position: relative;
+      width: 30%;
+      max-width: calc((260 / 16 * 1rem)); }
+      .title:before {
+        content: '';
+        background: #3760ef;
+        width: calc((75 / 16 * 1rem));
+        height: calc((3 / 16 * 1rem));
+        display: block;
+        border-radius: calc((2 / 16 * 1rem));
+        position: absolute;
+        left: 0;
+        top: calc((-20 / 16 * 1rem)); } }
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%; }
+  @media all and (min-width: 1024px) {
+    .slider {
+      width: calc((100% / 3) * 2); } }
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  @media all and (min-width: 1024px) {
+    .navigation {
+      position: absolute;
+      left: 0;
+      bottom: 0; } }
+  .navigation > svg:first-child {
+    display: none;
+    width: calc((30 / 16 * 1rem));
+    height: calc((30 / 16 * 1rem));
+    margin: calc((10 / 16 * 1rem));
+    cursor: auto;
+    opacity: 1;
+    transition: opacity 0.3s; }
+    @media all and (min-width: 768px) {
+      .navigation > svg:first-child {
+        display: block; } }
+    .navigation > svg:first-child > circle {
+      stroke: black; }
+    .navigation > svg:first-child > path {
+      fill: black; }
+    @media all and (min-width: 1379px) {
+      .navigation > svg:first-child {
+        cursor: pointer; } }
+    .navigation > svg:first-child:hover {
+      opacity: 0.5; }
+  .navigation > svg:last-child {
+    transform: rotate(90deg);
+    display: block;
+    width: calc((30 / 16 * 1rem));
+    height: calc((30 / 16 * 1rem));
+    margin: calc((10 / 16 * 1rem));
+    cursor: auto;
+    opacity: 1;
+    transition: opacity 0.3s; }
+    @media all and (min-width: 768px) {
+      .navigation > svg:last-child {
+        transform: rotate(0deg); } }
+    .navigation > svg:last-child > circle {
+      stroke: black; }
+    .navigation > svg:last-child > path {
+      fill: black; }
+    @media all and (min-width: 1379px) {
+      .navigation > svg:last-child {
+        cursor: pointer; } }
+    .navigation > svg:last-child:hover {
+      opacity: 0.5; }

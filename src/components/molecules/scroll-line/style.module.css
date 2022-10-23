@@ -1,0 +1,15 @@
+.line {
+  width: 100%;
+  height: calc((1 / 16 * 1rem));
+  background: #E2E7FD;
+  border-radius: calc((1 / 16 * 1rem));
+  position: relative;
+  overflow: hidden; }
+
+.width {
+  width: 100%;
+  height: calc((1 / 16 * 1rem));
+  background: #3760EF;
+  border-radius: 1px;
+  transform: translateX(-100%);
+  transition: 0.1s linear; }

@@ -1,0 +1,207 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+.section {
+  position: relative;
+  @include flc;
+  background-image: url('../../../img/banner_auth.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 10px;
+  padding: rem(100) calc(#{$subline} * 2);
+  @include mmin($laptop) {
+    padding: rem(100) calc(#{$subline} * 3);
+    background-image: url('../../../img/banner_auth_pad.png');
+  };
+
+  @include mmin-portrait($phone) {
+    background-image: url('../../../img/banner_auth_mob.png');
+  }
+
+  @include mmin($laptop) {
+    padding: rem(100) 0;
+  }
+}
+.content {
+  display: flex;
+  padding: 25px;
+  border: 1px solid rgba(39, 59, 74, 0.1);
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 100px;
+  @include mmin($laptop) {
+    padding: 40px;
+  }
+  @include mmin-portrait($phone) {
+    flex-direction: column;
+    align-items: center;
+    border: none;
+  }
+}
+
+.guaranteedIcon {
+  padding: 10px;
+  width: 75px;
+  height: 75px;
+  border: 1px solid #E9EBED;
+  border-radius: 100%;
+  @include mmin($laptop) {
+    padding: 12.5px;
+    width: 100px;
+    height: 100px;
+  }
+  @include mmin-portrait($phone) {
+    padding: 7.5px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  img {
+    width: 55px;
+    @include mmin-portrait($phone) {
+      width: 45px;
+    }
+    @include mmin($laptop) {
+      width: 75px;
+    }
+  }
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  @include mmin-portrait($phone) {
+    align-items: center;
+  }
+}
+
+.title {
+  font-size: 18px;
+  max-width: 220px;
+  color: #273B4A;
+  @include mmin-portrait($phone) {
+    text-align: center;
+    font-size: 14px;
+  }
+  @include mmin($laptop) {
+    font-size: 21px;
+    max-width: 240px;
+  }
+}
+
+.blueTitle {
+  font-weight: 500;
+  color: #3760EF;
+}
+
+.additionalInfo {
+  font-size: 12px;
+  color: rgba(39, 59, 74, 0.5);
+  max-width: 350px;
+  margin-top: 15px;
+  @include mmin($laptop) {
+    font-size: 14px;
+    max-width: 750px;
+  }
+  @include mmin-portrait($phone) {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+.chatButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  cursor: pointer;
+  @include mmin-portrait($phone) {
+   margin-top: 15px;
+  }
+}
+
+.chatIcon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  img {
+    width: 100%;
+  }
+}
+
+.chatButtonText {
+  font-weight: bolder;
+  font-size: rem(14);
+  color: #3760EF;
+  @include mmin-portrait($phone) {
+    font-size: 14px;
+  }
+  @include mmin($laptop) {
+    font-size: rem(16);
+  }
+}
+
+.questionsMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mmin-portrait($phone) {
+    margin-top: 30px;
+  }
+}
+
+.mobileLine {
+  display: none;
+  @include mmin-portrait($phone) {
+    display: block;
+    background: #E9EBED;
+  }
+}
+
+.inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  color: white;
+  text-align: center;
+
+  & > span {
+    display: block;
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: 141.02%;
+    margin-bottom: rem(20);
+  }
+
+  @include mmin($laptop) {
+    @include dflex(center,nowrap,space-between);
+
+    & > span {
+      font-size: rem(18);
+      margin-bottom: 0;
+      text-align: left;
+      margin-right: rem(25);
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  @include mmin($laptop) {
+    font-size: rem(18);
+    width: auto;
+    min-width: rem(160);
+  }
+}

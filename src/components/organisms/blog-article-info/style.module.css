@@ -1,0 +1,42 @@
+.info {
+  background: #3760ef;
+  border-radius: calc((10 / 16 * 1rem));
+  padding: calc((50 / 16 * 1rem)) calc((15 / 16 * 1rem));
+  position: relative; }
+  @media all and (min-width: 1024px) {
+    .info {
+      padding: calc((50 / 16 * 1rem));
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-items: center; } }
+  .info h2 {
+    color: white !important;
+    text-align: center;
+    font-size: calc((20 / 16 * 1rem)); }
+    @media all and (min-width: 1024px) {
+      .info h2 {
+        font-size: calc((35 / 16 * 1rem));
+        text-align: left;
+        margin: 0 !important;
+        max-width: calc((460 / 16 * 1rem)); } }
+  .infoBtn {
+    background: white;
+    color: #000000;
+    height: calc((40 / 16 * 1rem));
+    width: 100%;
+    margin: calc((40 / 16 * 1rem)) 0 calc((10 / 16 * 1rem));
+    font-weight: 500; }
+    @media all and (min-width: 1024px) {
+      .infoBtn {
+        height: calc((50 / 16 * 1rem));
+        margin: calc((15 / 16 * 1rem)) 0 0 0;
+        min-width: calc((200 / 16 * 1rem)); } }
+@media all and (min-width: 1024px) {
+  .block {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center; }
+    .block > div {
+      display: block; } }

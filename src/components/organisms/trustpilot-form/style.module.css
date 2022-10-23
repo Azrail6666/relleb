@@ -1,0 +1,14 @@
+.trustpilot {
+  display: flex;
+  align-items: flex-end; }
+  .trustpilot > div:first-of-type {
+    background-image: url("/img/trustpilot_form.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: calc((110 / 16 * 1rem));
+    height: calc((32 / 16 * 1rem));
+    display: block;
+    margin-left: 15px; }
+  .trustpilot span, .trustpilot a {
+    font-size: 16px;
+    color: rgba(39, 59, 74, 0.75); }

@@ -1,0 +1,35 @@
+.trustpilot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  .trustpilot > div:first-of-type {
+    background-image: url("/img/trustpilot.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: calc((72 / 16 * 1rem));
+    height: calc((20 / 16 * 1rem));
+    display: block;
+    margin-right: calc((10 / 16 * 1rem)); }
+  .trustpilot > div:last-of-type {
+    display: flex; }
+    .trustpilot > div:last-of-type > svg {
+      display: block;
+      width: calc((12 / 16 * 1rem));
+      height: calc((12 / 16 * 1rem));
+      margin-left: calc((5 / 16 * 1rem)); }
+      .trustpilot > div:last-of-type > svg:first-child {
+        margin-left: 0; }
+      .trustpilot > div:last-of-type > svg > rect {
+        fill: #3760ef !important; }
+      .trustpilot > div:last-of-type > svg > path {
+        fill: white !important; }
+
+.trustpilotInvert > div:first-of-type {
+  filter: invert(1); }
+
+.trustpilotInvert > div:last-of-type > svg > rect {
+  fill: white !important; }
+
+.trustpilotInvert > div:last-of-type > svg > path {
+  fill: #3760EF !important; }

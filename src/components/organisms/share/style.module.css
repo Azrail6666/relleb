@@ -1,0 +1,120 @@
+.share {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; }
+  .share:focus {
+    outline: none; }
+  .share:hover span::before {
+    opacity: 0; }
+  .share span {
+    line-height: 140%;
+    font-weight: 500;
+    position: relative; }
+    .share span::before {
+      content: '';
+      width: 100%;
+      height: calc((1 / 16 * 1rem));
+      position: absolute;
+      bottom: 0;
+      background: #314351;
+      opacity: 1;
+      transition: 0.3s ease; }
+  .share svg {
+    width: calc((13 / 16 * 1rem));
+    height: calc((16 / 16 * 1rem));
+    margin-right: calc((10 / 16 * 1rem)); }
+
+.wrap {
+  width: 100%;
+  max-width: calc((440 / 16 * 1rem)); }
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc((20 / 16 * 1rem));
+  line-height: calc((30 / 16 * 1rem));
+  text-align: center;
+  color: #000000;
+  margin-bottom: calc((25 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .title {
+      text-align: left;
+      max-width: calc((220 / 16 * 1rem));
+      margin-bottom: calc((30 / 16 * 1rem)); } }
+.desc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: calc((14 / 16 * 1rem));
+  line-height: 140.02%;
+  color: #314351;
+  margin-bottom: calc((25 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .desc {
+      justify-content: flex-start;
+      max-width: calc((270 / 16 * 1rem));
+      margin-bottom: calc((30 / 16 * 1rem)); } }
+  .desc > picture {
+    min-width: calc((50 / 16 * 1rem));
+    height: calc((50 / 16 * 1rem));
+    display: block;
+    border-radius: calc((5 / 16 * 1rem));
+    overflow: hidden;
+    margin-right: calc((10 / 16 * 1rem)); }
+    .desc > picture > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block; }
+
+.nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: top; }
+  .nav > li {
+    width: calc(100% / 2 - calc((2.5 / 16 * 1rem)));
+    margin-bottom: calc((5 / 16 * 1rem));
+    list-style-type: none; }
+    .nav > li > a {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      align-items: center;
+      background: #ffffff;
+      border: calc((1 / 16 * 1rem)) solid #e2e7fd;
+      border-radius: calc((10 / 16 * 1rem));
+      text-decoration: none;
+      padding: calc((18 / 16 * 1rem)) calc((15 / 16 * 1rem));
+      max-height: calc((50 / 16 * 1rem));
+      transition: background 0.3s ease;
+      color: #314351;
+      text-decoration: none; }
+      .nav > li > a svg {
+        width: calc((20 / 16 * 1rem));
+        height: auto;
+        max-height: calc((20 / 16 * 1rem));
+        margin-right: calc((10 / 16 * 1rem)); }
+      .nav > li > a img {
+        width: calc((20 / 16 * 1rem));
+        height: auto;
+        margin-right: calc((10 / 16 * 1rem)); }
+      .nav > li > a:hover {
+        background: rgba(255, 255, 255, 0.5);
+        text-decoration: none; }

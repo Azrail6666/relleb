@@ -59,10 +59,6 @@ const Header: FC<IHeader> = ({ line }) => {
           </div>
         )}
       </header>
-      <div
-        className={styled.headerBuffer}
-        style={{ paddingTop: `${headerHeightState}px` }}
-      />
     </>
   );
 };

@@ -1,0 +1,27 @@
+.select {
+  display: inline-flex;
+  align-items: center;
+  position: relative; }
+  .select svg {
+    display: block;
+    margin-left: calc((5 / 16 * 1rem));
+    position: absolute;
+    right: 0;
+    pointer-events: none; }
+  .select > select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: calc((16 / 16 * 1rem));
+    line-height: 150%;
+    padding-right: calc((20 / 16 * 1rem)); }
+    @media all and (min-width: 1379px) {
+      .select > select {
+        cursor: pointer; } }
+    .select > select > option {
+      color: inherit; }

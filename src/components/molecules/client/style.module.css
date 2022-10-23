@@ -1,0 +1,118 @@
+.client {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden; }
+  @media all and (min-width: 1024px) {
+    .client {
+      border-radius: calc(5px * 2); } }
+.header {
+  background: #3760ef;
+  padding: calc((20 / 16 * 1rem));
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center; }
+
+.avatar {
+  width: calc((34 / 16 * 1rem));
+  height: calc((34 / 16 * 1rem));
+  border-radius: 50%;
+  overflow: hidden; }
+  @media all and (min-width: 1024px) {
+    .avatar {
+      width: calc((44 / 16 * 1rem));
+      height: calc((44 / 16 * 1rem)); } }
+  .avatar > picture {
+    width: 100%; }
+    .avatar > picture > img {
+      width: 100%; }
+
+.name {
+  flex-grow: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: calc((12 / 16 * 1rem));
+  line-height: 140.02%;
+  color: white;
+  padding-left: calc((10 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .name {
+      font-size: calc((16 / 16 * 1rem));
+      padding-left: calc((15 / 16 * 1rem)); } }
+  .name > span {
+    display: block;
+    color: #9baff7;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc((11 / 16 * 1rem));
+    line-height: 140.02%; }
+    @media all and (min-width: 1024px) {
+      .name > span {
+        font-size: calc((14 / 16 * 1rem)); } }
+.ratingStyle {
+  display: flex; }
+  .ratingStyle > svg {
+    display: block;
+    width: calc((11 / 16 * 1rem));
+    height: calc((11 / 16 * 1rem));
+    margin-left: calc((4 / 16 * 1rem)); }
+    .ratingStyle > svg:first-child {
+      margin-left: 0; }
+    @media all and (min-width: 1024px) {
+      .ratingStyle > svg {
+        width: calc((14 / 16 * 1rem));
+        height: calc((14 / 16 * 1rem)); } }
+    .ratingStyle > svg > rect {
+      fill: white !important; }
+    .ratingStyle > svg > path {
+      fill: #3760EF !important; }
+
+.verif {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: calc((5 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .verif {
+      margin-top: calc((7 / 16 * 1rem)); } }
+  .verif > svg {
+    width: calc((9 / 16 * 1rem));
+    height: calc((9 / 16 * 1rem));
+    stroke: #9baff7;
+    fill: none; }
+    @media all and (min-width: 1024px) {
+      .verif > svg {
+        width: calc((12 / 16 * 1rem));
+        height: calc((12 / 16 * 1rem)); } }
+  .verif > span {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc((8 / 16 * 1rem));
+    line-height: 140.02%;
+    color: #9baff7;
+    margin-left: calc((5 / 16 * 1rem)); }
+    @media all and (min-width: 1024px) {
+      .verif > span {
+        font-size: calc((10 / 16 * 1rem)); } }
+.content {
+  padding: calc((20 / 16 * 1rem)) calc((20 / 16 * 1rem)) calc((30 / 16 * 1rem)) calc((20 / 16 * 1rem));
+  background: white;
+  font-weight: 400;
+  font-size: calc((14 / 16 * 1rem));
+  line-height: 140.02%;
+  color: black;
+  height: calc((155 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .content {
+      padding: calc((30 / 16 * 1rem));
+      font-size: calc((20 / 16 * 1rem));
+      height: calc((200 / 16 * 1rem)); } }
+  .content > p {
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    height: 100%; }

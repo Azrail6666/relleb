@@ -1,0 +1,131 @@
+.formMain {
+  display: flex;
+  flex-direction: column; }
+
+.formTitleLine {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; }
+  .formTitleLine span {
+    font-weight: 600;
+    font-size: 20px;
+    color: #273B4A; }
+  .formTitleLine img {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px; }
+
+.linksInputs {
+  display: flex;
+  flex-direction: column; }
+  .linksInputs input.formLinkInput {
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #314351;
+    border: 2px solid rgba(49, 67, 81, 0.1);
+    border-radius: 5px;
+    background: none;
+    width: 100%;
+    padding: 12px 25px; }
+  .linksInputs input.formLinkInput::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: #314351; }
+  .linksInputs button.addNewLine {
+    background: none;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: #3760EF;
+    margin-left: auto;
+    cursor: pointer;
+    margin-top: 10px; }
+
+.mainInput {
+  outline: none;
+  font-weight: 500;
+  font-size: 18px;
+  color: #314351;
+  border: 2px solid rgba(49, 67, 81, 0.1);
+  border-radius: 5px;
+  background: none;
+  width: 100%;
+  padding: 12px 25px;
+  margin-top: 20px; }
+
+.mainInput::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(49, 67, 81, 0.75); }
+
+.formButton {
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #3760EF;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 15px 0;
+  cursor: pointer;
+  margin-top: 30px; }
+
+.inputWithDel {
+  display: flex;
+  align-items: center;
+  border: 2px solid rgba(49, 67, 81, 0.1);
+  border-radius: 5px;
+  padding: 12px 25px;
+  width: 100%;
+  margin-top: 20px; }
+  .inputWithDel button {
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    border: none;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px; }
+    .inputWithDel button img {
+      width: 100%; }
+  .inputWithDel input {
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #314351;
+    background: none;
+    width: 100%; }
+  .inputWithDel input::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    color: #314351; }
+
+.formInputWithLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; }
+
+.formInputLabel {
+  font-weight: 600;
+  font-size: 20px;
+  color: #273B4A;
+  margin-bottom: 10px; }
+
+.formInput {
+  outline: none;
+  border: 2px solid rgba(49, 67, 81, 0.1);
+  border-radius: 6px;
+  font-size: 18px;
+  color: rgba(49, 67, 81, 0.75);
+  padding: 12px 25px;
+  width: 100%; }
+
+.formInput::placeholder {
+  font-size: 18px;
+  color: rgba(49, 67, 81, 0.75); }

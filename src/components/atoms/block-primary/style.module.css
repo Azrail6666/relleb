@@ -1,0 +1,16 @@
+.block {
+  width: 100%;
+  background: #F8F9FF;
+  border-radius: calc((10 / 16 * 1rem));
+  padding: calc((50 / 16 * 1rem)) calc((15 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .block {
+      padding: calc((50 / 16 * 1rem)) calc((30 / 16 * 1rem)); } }
+.beforeLine::before {
+  content: "";
+  width: calc((60 / 16 * 1rem));
+  height: calc((2 / 16 * 1rem));
+  background: #3760EF;
+  border-radius: calc((14 / 16 * 1rem));
+  margin: 0 auto;
+  display: block; }

@@ -1,0 +1,76 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 10vh 10vw; }
+  .modalActive {
+    opacity: 1;
+    pointer-events: auto; }
+  .modalBg {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: auto; }
+    .modalBg:focus {
+      outline: none; }
+
+.inner {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  overflow: hidden;
+  background: #f8f9ff;
+  border-radius: calc((10 / 16 * 1rem));
+  padding: calc((15 / 16 * 1rem)) calc((10 / 16 * 1rem));
+  max-height: 80vh; }
+  @media all and (min-width: 1024px) {
+    .inner {
+      padding: calc((50 / 16 * 1rem)) calc((35 / 16 * 1rem)); } }
+  .innerActive {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto; }
+
+.content {
+  overflow-y: auto;
+  max-height: 70vh; }
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  align-items: center; }
+  .close > svg {
+    width: calc((15 / 16 * 1rem));
+    height: calc((15 / 16 * 1rem));
+    display: block;
+    cursor: pointer; }
+    @media all and (min-width: 1024px) {
+      .close > svg {
+        width: calc((25 / 16 * 1rem));
+        height: calc((25 / 16 * 1rem));
+        position: absolute;
+        top: calc((50 / 16 * 1rem)); } }

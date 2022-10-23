@@ -1,0 +1,26 @@
+.details > summary {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc((15 / 16 * 1rem));
+  line-height: 160%;
+  color: #000000;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%233760EF'/%3E%3Cpath d='M10.0508 6.28516V13.8141' stroke='white'/%3E%3Cpath d='M6.28711 10.0488H13.816' stroke='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: calc((15 / 16 * 1rem)) calc((15 / 16 * 1rem));
+  padding-right: calc((30 / 16 * 1rem)); }
+  @media all and (min-width: 1024px) {
+    .details > summary {
+      font-size: calc((25 / 16 * 1rem));
+      background-size: calc((20 / 16 * 1rem)) calc((20 / 16 * 1rem)); } }
+.details[open] > summary {
+  margin-bottom: calc((20 / 16 * 1rem));
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='10' fill='%233760EF'/%3E%3Cpath d='M6.28418 10.0488H13.8131' stroke='white'/%3E%3C/svg%3E%0A"); }
+  @media all and (min-width: 1024px) {
+    .details[open] > summary {
+      margin-bottom: calc((25 / 16 * 1rem)); } }
+.details > summary::-webkit-details-marker {
+  display: none; }

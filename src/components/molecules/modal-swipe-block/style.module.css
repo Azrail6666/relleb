@@ -1,0 +1,45 @@
+.block {
+  margin-top: calc((16 / 16 * 1rem));
+  margin-bottom: calc((10 / 16 * 1rem)); }
+  .block hr {
+    max-width: calc(100% - (calc((60 / 16 * 1rem))));
+    margin: calc((16 / 16 * 1rem)) auto; }
+  .blockTitle {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc((20 / 16 * 1rem));
+    line-height: calc((30 / 16 * 1rem));
+    text-align: center;
+    color: #000000;
+    max-width: calc(100% - (calc((100 / 16 * 1rem))));
+    margin: 0 auto calc((16 / 16 * 1rem)); }
+  .blockDesc {
+    font-size: calc((14 / 16 * 1rem));
+    line-height: 140.02%;
+    text-align: center;
+    color: #314351;
+    max-width: calc(100% - (calc((60 / 16 * 1rem))));
+    margin: 0 auto; }
+  .blockList {
+    margin: 0;
+    padding: 0;
+    width: max-content; }
+    .blockListWrap {
+      margin: 0 auto calc((30 / 16 * 1rem));
+      padding: 0;
+      max-width: calc(100% - (calc((100 / 16 * 1rem))));
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+    .blockList > li {
+      font-size: calc((12 / 16 * 1rem)); }
+      .blockList > li > svg {
+        width: calc((20 / 16 * 1rem));
+        height: calc((20 / 16 * 1rem));
+        margin-right: calc((7 / 16 * 1rem)); }
+  .blockBtn {
+    height: calc((41 / 16 * 1rem));
+    width: 100%;
+    margin-bottom: calc((10 / 16 * 1rem)); }

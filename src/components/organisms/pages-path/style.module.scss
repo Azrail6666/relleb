@@ -1,0 +1,34 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+
+div.pagesPath {
+  display: flex;
+  align-items: center;
+  .arrow {
+    width: 16px;
+    height: 16px;
+    margin: 0 7px;
+  }
+
+  a {
+    font-size: rem(16);
+    text-decoration: none;
+    @include mmin-portrait($phone) {
+      font-size: rem(10);
+    }
+  }
+
+  a:not(:last-child) {
+    color: #273B4A;
+    cursor: pointer;
+  }
+
+  a:not(:last-child):hover {
+    color: #007aff;
+  }
+
+  a:last-child {
+    color: rgba(49, 67, 81, 0.5);
+  }
+}

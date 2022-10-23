@@ -1,0 +1,42 @@
+.quote {
+  background: #3760ef;
+  border-radius: calc((10 / 16 * 1rem));
+  padding: calc((50 / 16 * 1rem));
+  font-style: italic;
+  margin: calc((15 / 16 * 1rem)) 0;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: calc((14 / 16 * 1rem));
+  line-height: 160.02%;
+  color: #ffffff;
+  position: relative; }
+  .quote p {
+    color: #ffffff; }
+  @media all and (min-width: 1024px) {
+    .quote {
+      font-size: calc((20 / 16 * 1rem)); } }
+  .quote > svg {
+    fill: #E2E7FD; }
+    .quote > svg:first-of-type {
+      position: absolute;
+      left: calc((20 / 16 * 1rem));
+      top: calc((-15 / 16 * 1rem)); }
+      @media all and (min-width: 1024px) {
+        .quote > svg:first-of-type {
+          left: calc((46 / 16 * 1rem)); } }
+    .quote > svg:last-of-type {
+      position: absolute;
+      right: calc((20 / 16 * 1rem));
+      bottom: calc((-15 / 16 * 1rem)); }
+      @media all and (min-width: 1024px) {
+        .quote > svg:last-of-type {
+          right: calc((46 / 16 * 1rem)); } }
+.quoteLight {
+  background: #F8F9FF;
+  color: #000000;
+  position: relative; }
+  .quoteLight p {
+    color: #000000; }
+  .quoteLight > svg {
+    fill: #3760EF; }
