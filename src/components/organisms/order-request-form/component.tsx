@@ -9,31 +9,59 @@ import TrustpilotForm from '../trustpilot-form/component';
 import AdditionalDataIcon from './additionalDataIcon.svg';
 import Button from '../../atoms/buttons/component';
 import Picture from '../../atoms/picture/component';
+import { stat } from 'fs';
 
 // eslint-disable-next-line max-len
 class OrderRequestForm extends React.Component<{
     // eslint-disable-next-line @typescript-eslint/ban-types
     confirmFormFilledFunction: Function,
+    isTheftFraudLoss: boolean,
+    suggestAlternative: boolean,
+    links: string[],
+    isTheftFraudLossStatus: boolean,
+    suggestAlternativeStatus: boolean,
+    comments: string,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    setOrderRequestFunction: Function,
 }, {
-    inputsValues: string[]
+    inputsValues: string[],
+    comments: string,
+    isTheftFraudLossStatus: boolean,
+    suggestAlternativeStatus: boolean,
 }> {
     constructor(props) {
         super(props);
         this.state = {
-            inputsValues: [
-                '',
-            ],
+            inputsValues: props.links,
+            comments: props.comments,
+            isTheftFraudLossStatus: props.isTheftFraudLossStatus,
+            suggestAlternativeStatus: props.suggestAlternativeStatus,
         };
         this.validateForm = this.validateForm.bind(this);
         this.changeValue = this.changeValue.bind(this);
         this.addNewInput = this.addNewInput.bind(this);
         this.deleteInput = this.deleteInput.bind(this);
+        this.changeValueComments = this.changeValueComments.bind(this);
+        this.changeOption = this.changeOption.bind(this);
     }
 
     // eslint-disable-next-line class-methods-use-this
     validateForm() {
         const { props, state } = this;
-        props.confirmFormFilledFunction();
+        const newLinks = [];
+        // eslint-disable-next-line no-plusplus
+        for (let i = 0; i < state.inputsValues.length; i++) {
+            if (state.inputsValues[i]) {
+                // @ts-ignore
+                newLinks.push(state.inputsValues[i]);
+            }
+        }
+        if (newLinks.length) {
+            console.log(state);
+            // eslint-disable-next-line max-len
+            props.setOrderRequestFunction(newLinks, state.comments, state.isTheftFraudLossStatus, state.suggestAlternativeStatus);
+            props.confirmFormFilledFunction();
+        }
     }
 
     changeValue(target: any) {
@@ -63,6 +91,20 @@ class OrderRequestForm extends React.Component<{
         newInputValues.splice(parseInt(changedElement.id, 10), 1);
         this.setState({
             inputsValues: newInputValues,
+        });
+    }
+
+    changeValueComments(target: any) {
+        target = target.target as HTMLInputElement;
+        this.setState({
+            comments: target.value,
+        });
+    }
+
+    changeOption(optionName: string, currentValue: string | boolean) {
+        // @ts-ignore
+        this.setState({
+            [optionName]: currentValue,
         });
     }
 
@@ -103,37 +145,47 @@ class OrderRequestForm extends React.Component<{
               })}
             <button type="button" className={styled.addNewLine} onClick={this.addNewInput}>+ Add one more listing</button>
           </div>
-          <input className={styled.mainInput} placeholder="Comments (optional)" />
-          <OptionsWithLabel
-            title="Do you want to check serial number against international Theft, Fraud & Loss database?"
-            items={[
+          <input className={styled.mainInput} placeholder="Comments (optional)" value={state.comments} onChange={this.changeValueComments} />
+          {props.isTheftFraudLoss ? (
+            <OptionsWithLabel
+              name="isTheftFraudLossStatus"
+              title="Do you want to check serial number against international Theft, Fraud & Loss database?"
+              items={[
               {
-                  status: false,
-                  value: 'Theft, Fraud & Loss report',
+                  name: 'Theft, Fraud & Loss report',
                   price: '15 €',
+                  value: true,
               },
                 {
-                    status: true,
-                    value: 'No',
+                    name: 'No',
                     price: '',
+                    value: false,
                 },
           ]}
-          />
-          <OptionsWithLabel
-            title="Do you want Relleb to suggest alternative watch listings based on your criteria?"
-            items={[
+              currentValue={state.isTheftFraudLossStatus}
+              onChange={this.changeOption}
+            />
+) : undefined }
+          { props.suggestAlternative ? (
+            <OptionsWithLabel
+              name="suggestAlternativeStatus"
+              title="Do you want Relleb to suggest alternative watch listings based on your criteria?"
+              items={[
                     {
-                        status: false,
-                        value: 'Yes',
+                        name: 'Yes',
                         price: 'Free',
+                        value: true,
                     },
                     {
-                        status: true,
-                        value: 'No',
+                        name: 'No',
                         price: '',
+                        value: false,
                     },
                 ]}
-          />
+              currentValue={state.suggestAlternativeStatus}
+              onChange={this.changeOption}
+            />
+) : undefined }
           <button type="button" className={styled.formButton} onClick={this.validateForm}>Continue</button>
         </div>
     );

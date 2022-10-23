@@ -12,11 +12,31 @@ import Button from '../../atoms/buttons/component';
 import Picture from '../../atoms/picture/component';
 
 // eslint-disable-next-line max-len
-class SummaryItem extends React.Component<any, any> {
+class SummaryItem extends React.Component<{
+    services: {
+        name: string,
+        price: number,
+    }[]
+}, {
+    total: number
+}> {
     constructor(props) {
         super(props);
         this.state = {
+            total: 0.0,
         };
+    }
+
+    componentDidMount() {
+        const { props, state } = this;
+        let newTotal = 0.0;
+        // eslint-disable-next-line no-plusplus
+        for (let i = 0; i < props.services.length; i++) {
+            newTotal += props.services[i].price;
+        }
+        this.setState({
+            total: newTotal,
+        });
     }
 
     render() {
@@ -25,19 +45,17 @@ class SummaryItem extends React.Component<any, any> {
         <div className={`${styled.summaryItem} formStateDiv`}>
           <span className={styled.title}>Summary</span>
           <div className={styled.servicesList}>
-            <div className={styled.serviceItem}>
-              <span>Service</span>
-              <span>€29.00</span>
-            </div>
-            <div className={styled.serviceItem}>
-              <span>Service</span>
-              <span>€29.00</span>
-            </div>
+            {props.services.map((service) => (
+              <div className={styled.serviceItem}>
+                <span>{service.name}</span>
+                <span>{`€${service.price}`}</span>
+              </div>
+)) }
           </div>
           <hr />
           <div className={styled.totalItem}>
             <span className={styled.totalTitle}>Total</span>
-            <span className={styled.totalValue}>€39.00</span>
+            <span className={styled.totalValue}>{`€${state.total}`}</span>
           </div>
           <div className={styled.summaryAdditionalInfo}>
             <img src={ConfirmIcon} alt="Confirm" />

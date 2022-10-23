@@ -5,16 +5,36 @@ import OrderRequestState from '../order-request-state/component';
 import ShippingDetailsState from '../shipping-details-state/component';
 import PaymentState from '../payment-state/component';
 
-class FormComponent extends React.Component<any, {
-    activeForm: number
+class Service1Component extends React.Component<any, {
+    activeForm: number,
+    fullName: string,
+    emailAddress: string,
+    phoneNumber: string,
+    phoneCountry: any,
+    links: string[],
+    isTheftFraudLossStatus: boolean,
+    suggestAlternativeStatus: boolean,
+    comments: string,
 }> {
     constructor(props: any) {
         super(props);
         this.state = {
-            activeForm: 3,
+            activeForm: 1,
+            fullName: '',
+            emailAddress: '',
+            phoneNumber: '',
+            phoneCountry: 'UA',
+            links: [
+                '',
+            ],
+            isTheftFraudLossStatus: false,
+            suggestAlternativeStatus: false,
+            comments: '',
         };
         this.nextForm = this.nextForm.bind(this);
         this.setForm = this.setForm.bind(this);
+        this.setCustomerDetails = this.setCustomerDetails.bind(this);
+        this.setOrderRequest = this.setOrderRequest.bind(this);
     }
 
     // eslint-disable-next-line react/sort-comp
@@ -33,6 +53,26 @@ class FormComponent extends React.Component<any, {
         });
     }
 
+    // eslint-disable-next-line max-len
+    setCustomerDetails(newFullName: string, newEmailAddress: string, newPhoneNumber: string, newPhoneCountry: any) {
+        this.setState({
+            fullName: newFullName,
+            emailAddress: newEmailAddress,
+            phoneNumber: newPhoneNumber,
+            phoneCountry: newPhoneCountry,
+        });
+    }
+
+    // eslint-disable-next-line max-len
+    setOrderRequest(newLinks: string[], newComments: string, newIsTheftFraudLossStatus: boolean, newSuggestAlternativeStatus: boolean) {
+        this.setState({
+            links: newLinks,
+            isTheftFraudLossStatus: newIsTheftFraudLossStatus,
+            suggestAlternativeStatus: newSuggestAlternativeStatus,
+            comments: newComments,
+        });
+    }
+
     render() {
         const { props, state } = this;
         return (
@@ -44,15 +84,14 @@ class FormComponent extends React.Component<any, {
               additionalDataText="Your information is kept private and secure"
               nextFormFunction={this.nextForm}
               setFormFunction={this.setForm}
-              serviceDetailsTitle="All-in-one authentication & buying assistance’ service"
-              serviceDetailsDetails={[
-                <li>Authentication & Condition <a>report</a> with a certificate</li>,
-                <li>Serial number check</li>,
-                <li>Theft, Fraud & Loss <a>report</a></li>,
-                <li>Customs forms & declaration fulfillment support</li>,
-                <li>Easy returns & refunds</li>,
-              ]}
-              isBanner
+              serviceDetailsTitle=""
+              serviceDetailsDetails={[]}
+              isBanner={false}
+              setCustomerDetailsFunction={this.setCustomerDetails}
+              fullName={state.fullName}
+              emailAddress={state.emailAddress}
+              phoneNumber={state.phoneNumber}
+              phoneCountry={state.phoneCountry}
             />
             <OrderRequestState
               isHidden={state.activeForm !== 2}
@@ -61,18 +100,23 @@ class FormComponent extends React.Component<any, {
               additionalDataText=""
               nextFormFunction={this.nextForm}
               setFormFunction={this.setForm}
-            />
-            <ShippingDetailsState
-              isHidden={state.activeForm !== 3}
-              formNumber={3}
-              mainTitleText="Shipping method"
-              additionalDataText="We will ship your watch to this address after a full inspection & authentication"
-              nextFormFunction={this.nextForm}
-              setFormFunction={this.setForm}
+              serviceDetailsTitle="Listing review by a watchmaker service"
+              serviceDetailsDetails={[
+                <li>One listing review by an expert watchmaker & AI-tool</li>,
+                <li>Identify signs of fakes and defects by photos</li>,
+                <li>Seller background check</li>,
+              ]}
+              isTheftFraudLoss={false}
+              suggestAlternative={false}
+              links={state.links}
+              isTheftFraudLossStatus={state.isTheftFraudLossStatus}
+              suggestAlternativeStatus={state.suggestAlternativeStatus}
+              comments={state.comments}
+              setOrderRequestFunction={this.setOrderRequest}
             />
             <PaymentState
-              isHidden={state.activeForm !== 4}
-              formNumber={4}
+              isHidden={state.activeForm !== 3}
+              formNumber={3}
               mainTitleText="Payment"
               additionalDataText=""
               nextFormFunction={this.nextForm}
@@ -83,4 +127,4 @@ class FormComponent extends React.Component<any, {
     }
 }
 
-export default FormComponent;
+export default Service1Component;

@@ -12,6 +12,8 @@ import axios from 'axios';
 class PhoneInput extends React.Component<{
     // eslint-disable-next-line @typescript-eslint/ban-types
     onChange: Function,
+    phoneCountry: string,
+    phoneNumber: string,
 }, {
     isOpenChangeCountry: boolean,
     phoneCountry: string,
@@ -23,8 +25,8 @@ class PhoneInput extends React.Component<{
         super(props);
         this.state = {
             isOpenChangeCountry: false,
-            phoneCountry: 'UA',
-            phoneNumber: '',
+            phoneCountry: props.phoneCountry,
+            phoneNumber: props.phoneNumber,
             phoneCountries: {},
             countiesNames: {},
         };
@@ -65,7 +67,9 @@ class PhoneInput extends React.Component<{
     }
 
     changeActiveCountry(target: any) {
+        const { props, state } = this;
         target = target.target as HTMLButtonElement;
+        props.onChange(target.id, state.phoneNumber);
         this.setState({
             isOpenChangeCountry: false,
             phoneCountry: target.id,
@@ -73,6 +77,7 @@ class PhoneInput extends React.Component<{
     }
 
     changeValue(target: any) {
+        const { props, state } = this;
         target = target.target as HTMLInputElement;
         // eslint-disable-next-line max-len
         // eslint-disable-next-line max-len,react/no-access-state-in-setstate,react/destructuring-assignment
@@ -93,8 +98,8 @@ class PhoneInput extends React.Component<{
         // eslint-disable-next-line guard-for-in
         for (const dictKey in state.phoneCountries) {
             // @ts-ignore
-            const countryImage = <img id={dictKey} key={dictKey} src={`https://countryflagsapi.com/svg/${dictKey}`} alt={dictKey} />;
-            const countryNameText = <span id={dictKey} key={dictKey}>{`+${state.phoneCountries[dictKey]} ${state.countiesNames[dictKey]}`}</span>;
+            const countryImage = <img id={dictKey} key={`${dictKey}image`} src={`https://countryflagsapi.com/svg/${dictKey}`} alt={dictKey} />;
+            const countryNameText = <span id={dictKey} key={`${dictKey}text`}>{`+${state.phoneCountries[dictKey]} ${state.countiesNames[dictKey]}`}</span>;
             // eslint-disable-next-line max-len
             const countryLine = <button type="button" id={dictKey} key={dictKey} className={styled.countryLine} onClick={this.changeActiveCountry}>{[countryImage, countryNameText]}</button>;
             // @ts-ignore

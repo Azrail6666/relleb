@@ -10,30 +10,35 @@ import Picture from '../../atoms/picture/component';
 import axios from 'axios';
 
 // eslint-disable-next-line max-len
-class OptionsWithLabel extends React.Component<{ title: string, items: {status: boolean, value: string, price: string}[] }, {
-    items: {status: boolean, value: string, price: string}[]
+class OptionsWithLabel extends React.Component<{
+    name: string,
+    title: string,
+    currentValue: boolean | string,
+    items: {name: string, price: string, value: boolean | string}[],
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    onChange: Function,
+}
+    , {
+    currentValue: boolean | string,
+    items: {name: string, price: string, value: boolean | string}[]
 }> {
     constructor(props) {
         super(props);
         this.state = {
+            currentValue: props.currentValue,
             items: props.items,
         };
         this.changeOption = this.changeOption.bind(this);
     }
 
     changeOption(target: any) {
+        // eslint-disable-next-line react/no-access-state-in-setstate
         const { props, state } = this;
         target = target.target as HTMLButtonElement;
-        const newItems = [];
-        // eslint-disable-next-line no-plusplus
-        for (let i = 0; i < state.items.length; i++) {
-            const item = state.items[i];
-            item.status = i === parseInt(target.id, 10);
-            // @ts-ignore
-            newItems.push(item);
-        }
+        const newCurrentValue = state.items[parseInt(target.id, 10)].value;
+        props.onChange(props.name, newCurrentValue);
         this.setState({
-            items: newItems,
+            currentValue: newCurrentValue,
         });
     }
 
@@ -48,7 +53,7 @@ class OptionsWithLabel extends React.Component<{ title: string, items: {status: 
                   state.items.map((item, index) => (
                     <button
                         /* eslint-disable-next-line max-len */
-                      className={item.status ? styled.selectableOptionActive : styled.selectableOption}
+                      className={item.value === state.currentValue ? styled.selectableOptionActive : styled.selectableOption}
                       id={String(index)}
                       key={String(index)}
                       type="button"
@@ -56,11 +61,11 @@ class OptionsWithLabel extends React.Component<{ title: string, items: {status: 
                     >
                       <div id={String(index)} className={styled.selectTitle}>
                         {/* eslint-disable-next-line max-len */}
-                        <div id={String(index)} className={item.status ? styled.selected : styled.noSelected}>
+                        <div id={String(index)} className={item.value === state.currentValue ? styled.selected : styled.noSelected}>
                           <div id={String(index)} />
                         </div>
                         {/* eslint-disable-next-line max-len */}
-                        <span id={String(index)} className={styled.valueSelected}>{item.value}</span>
+                        <span id={String(index)} className={styled.valueSelected}>{item.name}</span>
                       </div>
                       {/* eslint-disable-next-line max-len */}
                       {item.price ? <span id={String(index)} className={styled.selectableOptionPrice}>{item.price}</span> : undefined}

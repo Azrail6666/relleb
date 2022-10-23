@@ -21,7 +21,17 @@ class OrderRequestState extends React.Component<{
     // eslint-disable-next-line @typescript-eslint/ban-types
     nextFormFunction: Function,
     // eslint-disable-next-line @typescript-eslint/ban-types
-    setFormFunction: Function
+    setFormFunction: Function,
+    serviceDetailsTitle: string | undefined,
+    serviceDetailsDetails: any[] | undefined,
+    isTheftFraudLoss: boolean,
+    suggestAlternative: boolean,
+    links: string[],
+    isTheftFraudLossStatus: boolean,
+    suggestAlternativeStatus: boolean,
+    comments: string,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    setOrderRequestFunction: Function,
 }, {
     filled: boolean
 }> {
@@ -55,16 +65,53 @@ class OrderRequestState extends React.Component<{
             />
             {!props.isHidden ? (
               <div className="formStateContent">
-                <FormServiceDetails
-                  serviceTitle="Listing review by a watchmaker service"
-                  serviceDetails={[
-                    <li>One listing review by an expert watchmaker & AI-tool</li>,
-                    <li>Identify signs of fakes and defects by photos</li>,
-                    <li>Seller background check</li>,
-                            ]}
+                {props.serviceDetailsTitle && props.serviceDetailsDetails ? (
+                  <FormServiceDetails
+                    serviceTitle={props.serviceDetailsTitle}
+                    serviceDetails={props.serviceDetailsDetails}
+                  />
+                    // eslint-disable-next-line max-len
+                    ) : (
+                      <OrderRequestForm
+                        confirmFormFilledFunction={this.confirmFormFilled}
+                        isTheftFraudLoss={props.isTheftFraudLoss}
+                        suggestAlternative={props.suggestAlternative}
+                        links={props.links}
+                        isTheftFraudLossStatus={props.isTheftFraudLossStatus}
+                        suggestAlternativeStatus={props.suggestAlternativeStatus}
+                        comments={props.comments}
+                        setOrderRequestFunction={props.setOrderRequestFunction}
+                      />
+)
+                  }
+                <SummaryItem
+                  services={[
+                        {
+                            name: 'Service',
+                            price: 29.9,
+                        },
+                        {
+                            name: 'Service',
+                            price: 29.9,
+                        },
+                    ]}
                 />
-                <SummaryItem />
-                <OrderRequestForm confirmFormFilledFunction={this.confirmFormFilled} />
+                {
+                      props.serviceDetailsTitle && props.serviceDetailsDetails ?
+                          // eslint-disable-next-line max-len
+                          (
+                            <OrderRequestForm
+                              confirmFormFilledFunction={this.confirmFormFilled}
+                              isTheftFraudLoss={props.isTheftFraudLoss}
+                              suggestAlternative={props.suggestAlternative}
+                              links={props.links}
+                              isTheftFraudLossStatus={props.isTheftFraudLossStatus}
+                              suggestAlternativeStatus={props.suggestAlternativeStatus}
+                              comments={props.comments}
+                              setOrderRequestFunction={props.setOrderRequestFunction}
+                            />
+                      ) : undefined
+                  }
                 <div className="formStateDiv" />
               </div>
                 ) : undefined}

@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import Header from '../templates/header/component';
 import Footer from '../templates/footer/component';
-import FormPageTemplate from '../templates/form-page/component';
+import ServicePage1Template from '../templates/service1-page/component';
 
 const Service1Page: FC = () => (
   <>
     <Header line />
-    <FormPageTemplate />
+    <ServicePage1Template />
     <Footer />
   </>
 );

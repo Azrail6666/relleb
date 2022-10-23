@@ -12,6 +12,12 @@ import parsePhoneNumber from 'libphonenumber-js';
 class CustomerDetailsForm extends React.Component<{
     // eslint-disable-next-line @typescript-eslint/ban-types
     confirmFormFilledFunction: Function,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    setCustomerDetailsFunction: Function,
+    fullName: string,
+    emailAddress: string,
+    phoneNumber: string,
+    phoneCountry: any
 }, {
     fullName: string,
     emailAddress: string,
@@ -21,10 +27,10 @@ class CustomerDetailsForm extends React.Component<{
     constructor(props) {
         super(props);
         this.state = {
-            fullName: '',
-            emailAddress: '',
-            phoneNumber: '',
-            phoneCountry: '',
+            fullName: props.fullName,
+            emailAddress: props.emailAddress,
+            phoneNumber: props.phoneNumber,
+            phoneCountry: props.phoneCountry,
         };
         this.validateForm = this.validateForm.bind(this);
         this.changeFullName = this.changeFullName.bind(this);
@@ -42,6 +48,8 @@ class CustomerDetailsForm extends React.Component<{
             .toLowerCase()
             .match(
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) && (!state.phoneNumber.length || phoneNumber?.isValid())) {
+            // eslint-disable-next-line max-len
+            props.setCustomerDetailsFunction(state.fullName, state.emailAddress, state.phoneNumber, state.phoneCountry);
             props.confirmFormFilledFunction();
         }
     }
@@ -80,7 +88,8 @@ class CustomerDetailsForm extends React.Component<{
             <span className={styled.formInputLabel}>Email:</span>
             <input className={styled.formInput} placeholder="Enter your Email" value={state.emailAddress} onChange={this.changeEmailAddress} />
           </div>
-          <PhoneInput onChange={this.changePhoneNumber} />
+          {/* eslint-disable-next-line max-len */}
+          <PhoneInput onChange={this.changePhoneNumber} phoneNumber={state.phoneNumber} phoneCountry={state.phoneCountry} />
           <button type="button" className={styled.formButton} onClick={this.validateForm}>Continue</button>
         </div>
     );

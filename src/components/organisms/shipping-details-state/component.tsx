@@ -22,7 +22,16 @@ class ShippingDetailsState extends React.Component<{
     // eslint-disable-next-line @typescript-eslint/ban-types
     nextFormFunction: Function,
     // eslint-disable-next-line @typescript-eslint/ban-types
-    setFormFunction: Function
+    setFormFunction: Function,
+    country: string,
+    city: string,
+    street: string,
+    apartment: string,
+    zipPostal: string,
+    shippingMethod: string,
+    coverage: string,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    setShippingFunction: Function,
 }, {
     filled: boolean
 }> {
@@ -56,8 +65,29 @@ class ShippingDetailsState extends React.Component<{
             />
             {!props.isHidden ? (
               <div className="formStateContent">
-                <ShippingDetailsForm confirmFormFilledFunction={this.confirmFormFilled} />
-                <SummaryItem />
+                <ShippingDetailsForm
+                  confirmFormFilledFunction={this.confirmFormFilled}
+                  country={props.country}
+                  city={props.city}
+                  street={props.street}
+                  apartment={props.apartment}
+                  zipPostal={props.zipPostal}
+                  shippingMethod={props.shippingMethod}
+                  coverage={props.coverage}
+                  setShippingFunction={props.setShippingFunction}
+                />
+                <SummaryItem
+                  services={[
+                        {
+                            name: 'Service',
+                            price: 29.9,
+                        },
+                        {
+                            name: 'Service',
+                            price: 29.9,
+                        },
+                    ]}
+                />
               </div>
                 ) : undefined}
           </div>

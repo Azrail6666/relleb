@@ -59,7 +59,18 @@ class PaymentState extends React.Component<{
             />
             {!props.isHidden ? (
               <div className="formStateContent">
-                <SummaryItem />
+                <SummaryItem
+                  services={[
+                        {
+                            name: 'Service',
+                            price: 29.9,
+                        },
+                        {
+                            name: 'Service',
+                            price: 29.9,
+                        },
+                    ]}
+                />
                 <div className="formStateDiv" />
                 <div className={`formStateDiv ${styled.paymentForm}`}>
                   <a className={styled.formButton}>SUBMIT & PAY</a>

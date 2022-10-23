@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import styled from './style.module.scss';
-import FormComponent from '../../organisms/form-component/component';
+import Service1Component from '../../organisms/service1-component/component';
 import PagesPath from '../../organisms/pages-path/component';
 
-const FormPageTemplate: FC = () => (
+const ServicePage1Template: FC = () => (
   <main className={styled.main}>
     <PagesPath />
-    <FormComponent />
+    <Service1Component />
   </main>
 );
 
-export default FormPageTemplate;
+export default ServicePage1Template;

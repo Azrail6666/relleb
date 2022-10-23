@@ -24,7 +24,13 @@ class CustomerDetailsState extends React.Component<{
     setFormFunction: Function,
     serviceDetailsTitle: string | undefined,
     serviceDetailsDetails: any[] | undefined,
-    isBanner: boolean | undefined
+    isBanner: boolean | undefined,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    setCustomerDetailsFunction: Function,
+    fullName: string,
+    emailAddress: string,
+    phoneNumber: string,
+    phoneCountry: any
 }, {
     filled: boolean
 }> {
@@ -58,13 +64,20 @@ class CustomerDetailsState extends React.Component<{
             />
             {!props.isHidden ? (
               <div className="formStateContent">
-                <CustomerDetailsForm confirmFormFilledFunction={this.confirmFormFilled} />
+                <CustomerDetailsForm
+                  confirmFormFilledFunction={this.confirmFormFilled}
+                  setCustomerDetailsFunction={props.setCustomerDetailsFunction}
+                  fullName={props.fullName}
+                  emailAddress={props.emailAddress}
+                  phoneCountry={props.phoneCountry}
+                  phoneNumber={props.phoneNumber}
+                />
                 {props.serviceDetailsTitle && props.serviceDetailsDetails ? (
                   <FormServiceDetails
                     serviceTitle={props.serviceDetailsTitle}
                     serviceDetails={props.serviceDetailsDetails}
                   />
-) : undefined}
+) : <div className="formStateDiv" />}
                 {props.isBanner ? <FormBanner /> : undefined}
               </div>
                 ) : undefined}
