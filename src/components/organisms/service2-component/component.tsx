@@ -26,7 +26,7 @@ class Service2Component extends React.Component<any, {
     constructor(props: any) {
         super(props);
         this.state = {
-            activeForm: 1,
+            activeForm: 3,
             fullName: '',
             emailAddress: '',
             phoneNumber: '',

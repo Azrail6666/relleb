@@ -1,17 +1,21 @@
 import React, { FC } from 'react';
 import styled from './style.module.scss';
 
-const UlCheck: FC<IUl> = ({ children, className }) => (
-  <ul className={`${styled.ul} ${className}`}>{children}</ul>
-);
+class StyledList extends React.Component <any, any> {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-interface IUl {
-  className?: string
-  children: React.ReactNode
+  render() {
+    const { props, state } = this;
+    return (
+      <ul className={styled.list}>
+        {props.children}
+      </ul>
+    );
+  }
 }
 
-UlCheck.defaultProps = {
-  className: '',
-};
-
-export default UlCheck;
+export default StyledList;

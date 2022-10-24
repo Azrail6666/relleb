@@ -1,38 +1,21 @@
 @import "../../../scss/utils/variables";
 @import "../../../scss/utils/mixins";
 
-.ul {
-  margin: 0;
-  padding: 0;
-  display: block;
-  width: 100%;
-
-  & > li {
-    @include dflex(center, nowrap, flex-start);
-    list-style-type: none;
-    font-weight: 400;
-    font-size: rem(14);
-    line-height: 140.02%;
-    color: #314351;
-    margin-bottom: rem(20);
+.list {
+  padding-left: 18px;
+  @include mmin($laptop) {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+    font-size: 14px;
     @include mmin($laptop) {
-      font-size: rem(16);
+      font-size: 18px;
+      margin-bottom: 15px;
     }
-
-    &::last-of-type {
-      margin-bottom: 0;
-    }
-
-    & > svg {
-      min-width: rem(20);
-      height: rem(20);
-      margin-right: rem(12);
-      display: block;
-      @include mmin($laptop) {
-        min-width: rem(20);
-        height: rem(20);
-        margin-right: rem(15);
-      }
-    }
+    color: rgba(49, 67, 81, 0.75);
+  }
+  li::marker {
+    color: #3760EF;
   }
 }

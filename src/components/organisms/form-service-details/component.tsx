@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from './style.module.scss';
 import TrustpilotForm from '../trustpilot-form/component';
+import StyledList from '../../molecules/styled-list/component';
 
 class FormServiceDetails extends React.Component<{
     serviceTitle: string,
@@ -19,9 +20,9 @@ class FormServiceDetails extends React.Component<{
             {/* eslint-disable-next-line max-len */}
             <div className={styled.infoData}>
               <span className={styled.additionalInfoTitle}>{props.serviceTitle}</span>
-              <ul className={styled.list}>
+              <StyledList>
                 {props.serviceDetails}
-              </ul>
+              </StyledList>
               <hr />
             </div>
             <TrustpilotForm />

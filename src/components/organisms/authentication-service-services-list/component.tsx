@@ -5,12 +5,29 @@ import YesIcon from './yesIcon.svg';
 import NoIcon from './noIcon.svg';
 import PlusIcon from './plus.svg';
 import MinusIcon from './minus.svg';
+import StyledList from '../../molecules/styled-list/component';
 import Button from '../../atoms/buttons/component';
 import Picture from '../../atoms/picture/component';
 import { Link } from 'react-router-dom';
 import TrustpilotForm from '../trustpilot-form/component';
 
-class AuthenticationServiceServices extends React.Component <any, {
+class AuthenticationServiceServices extends React.Component <{
+  services: {
+    title: any,
+    included: any[]
+  }[],
+  programs: {
+    title: string,
+    price: string,
+    topText: string,
+  }[],
+  statuses: boolean[][],
+  buttons: {
+    text: string,
+    link: string,
+    buttonType: string
+  }[]
+}, {
   width: number,
   openedStatuses: boolean[],
 }> {
@@ -56,118 +73,46 @@ class AuthenticationServiceServices extends React.Component <any, {
         <div className={styled.authenticationServiceServices}>
           <div className={styled.authenticationServicesDescriptions}>
             <div className={styled.authenticationServiceDescription} />
-            <div className={styled.authenticationServiceDescription}>
-              <span>Listing review online</span>
-              <ul>
-                <li>One listing review by an expert watchmaker & AI-tool</li>
-                <li>Identify signs of fakes and defects by photos</li>
-                <li>Seller background check</li>
-              </ul>
-            </div>
-            <div className={styled.authenticationServiceDescription}>
-              <span>Buying assistance</span>
-              <ul>
-                {/* eslint-disable-next-line max-len */}
-                <li>Relleb buying agent who communicates with seller on your behalf, and represent your interests</li>
-                <li>Better price negotiation</li>
-                <li>Secure transaction via Relleb Escrow</li>
-              </ul>
-            </div>
-            <div className={styled.authenticationServiceDescription}>
-              {/* eslint-disable-next-line max-len */}
-              <span>Physical Inspection and Authentication – <a>X datapoints, 1 business day</a></span>
-              <ul>
-                <li>Authentication & Condition report with a certificate</li>
-                <li>Serial number check</li>
-                <li>Theft, Fraud & Loss report</li>
-              </ul>
-            </div>
-            <div className={styled.authenticationServiceDescription}>
-              <span>Shipping & Returns</span>
-              <ul>
-                <li>FeDex tracked priority shipping & optional insurance</li>
-                <li>Customs forms & declaration fulfillment support</li>
-                <li>Easy returns & refunds</li>
-              </ul>
-            </div>
+            {props.services.map((service) => (
+              <div className={styled.authenticationServiceDescription}>
+                {service.title}
+                <StyledList>
+                  {service.included}
+                </StyledList>
+              </div>
+))
+            }
           </div>
           <div className={styled.authenticationServicesTable}>
             <div className={styled.authenticationServiceRow}>
-              <div className={styled.authenticationServiceHeader}>
-                <div className={styled.authenticationServiceTopInfo}>
-                  <span>39 €</span>
-                  <img src={InfoIcon} alt="Info" />
+              {props.programs.map((program) => (
+                <div className={styled.authenticationServiceHeader}>
+                  {/* eslint-disable-next-line max-len */}
+                  {program.topText ? <span className={styled.popular}>{program.topText}</span> : undefined}
+                  <div className={styled.authenticationServiceTopInfo}>
+                    {program.price ? <span>{program.price}</span> : undefined}
+                    <img src={InfoIcon} alt="Info" />
+                  </div>
+                  <span className={styled.authenticationServiceHeaderTitle}>{program.title}</span>
+                  <hr />
                 </div>
-                {/* eslint-disable-next-line max-len */}
-                <span className={styled.authenticationServiceHeaderTitle}>Listing review by a watchmaker</span>
-                <hr />
-              </div>
-              <div className={styled.authenticationServiceHeader}>
-                <span className={styled.popular}>Most popular</span>
-                <div className={styled.authenticationServiceTopInfo}>
-                  <img src={InfoIcon} alt="Info" />
-                </div>
-                {/* eslint-disable-next-line max-len */}
-                <span className={styled.authenticationServiceHeaderTitle}>Physical Inspection & Authentication</span>
-                <hr />
-              </div>
-              <div className={styled.authenticationServiceHeader}>
-                <div className={styled.authenticationServiceTopInfo}>
-                  <img src={InfoIcon} alt="Info" />
-                </div>
-                {/* eslint-disable-next-line max-len */}
-                <span className={styled.authenticationServiceHeaderTitle}>All-in-one authentication & buying assistance</span>
-                <hr />
-              </div>
+))}
             </div>
-            <div className={styled.authenticationServiceRow}>
-              <div className={styled.authenticationServiceYes}>
-                <img src={YesIcon} alt="yes" />
+            {props.statuses.map((oneStatus) => (
+              <div className={styled.authenticationServiceRow}>
+                {oneStatus.map((oneRowData) => oneRowData ? (
+                  <div className={styled.authenticationServiceYes}>
+                    <img src={YesIcon} alt="yes" />
+                  </div>
+) : (
+  <div className={styled.authenticationServiceNo}>
+    <img src={NoIcon} alt="no" />
+  </div>
+))}
               </div>
-              <div className={styled.authenticationServiceNo}>
-                <img src={NoIcon} alt="no" />
-              </div>
-              <div className={styled.authenticationServiceYes}>
-                <img src={YesIcon} alt="yes" />
-              </div>
-            </div>
-            <div className={styled.authenticationServiceRow}>
-              <div className={styled.authenticationServiceNo}>
-                <img src={NoIcon} alt="no" />
-              </div>
-              <div className={styled.authenticationServiceNo}>
-                <img src={NoIcon} alt="no" />
-              </div>
-              <div className={styled.authenticationServiceYes}>
-                <img src={YesIcon} alt="yes" />
-              </div>
-            </div>
-            <div className={styled.authenticationServiceRow}>
-              <div className={styled.authenticationServiceNo}>
-                <img src={NoIcon} alt="no" />
-              </div>
-              <div className={styled.authenticationServiceYes}>
-                <img src={YesIcon} alt="yes" />
-              </div>
-              <div className={styled.authenticationServiceYes}>
-                <img src={YesIcon} alt="yes" />
-              </div>
-            </div>
-            <div className={styled.authenticationServiceRow}>
-              <div className={styled.authenticationServiceNo}>
-                <img src={NoIcon} alt="no" />
-              </div>
-              <div className={styled.authenticationServiceYes}>
-                <img src={YesIcon} alt="yes" />
-              </div>
-              <div className={styled.authenticationServiceYes}>
-                <img src={YesIcon} alt="yes" />
-              </div>
-            </div>
+))}
             <div className={styled.authenticationServiceRowButtons}>
-              <Link to="/service1" className={styled.buyNow}>BUY NOW</Link>
-              <Link to="/service2" className={styled.getQuote}>GET A QUOTE</Link>
-              <Link to="/service3" className={styled.getQuote}>GET A QUOTE</Link>
+              {props.buttons.map((button) => <Link className={button.buttonType === 'filled' ? styled.buyNow : styled.getQuote} to={button.link}>{button.text}</Link>)}
             </div>
             <hr className={styled.enline} />
             <div className={styled.trustpilot}>
@@ -179,101 +124,46 @@ class AuthenticationServiceServices extends React.Component <any, {
     }
       return (
         <div className={styled.authenticationServiceServicesMobile}>
-          <div className={styled.authenticationServiceOneMobile}>
-            <div className={styled.authenticationServiceOneMobileInfo}>
-              <div className={styled.authenticationServiceTopInfo}>
-                <span>39 €</span>
-                <img src={InfoIcon} alt="Info" />
-              </div>
-              {/* eslint-disable-next-line max-len */}
-              <span className={styled.authenticationServiceHeaderTitleMobile}>Listing review by a watchmaker</span>
-              <div>
-                <button id="0" type="button" className={styled.openIcon} onClick={this.openCloseOneData}>
-                  <img id="0" src={state.openedStatuses[0] ? MinusIcon : PlusIcon} alt="plus" />
-                </button>
-              </div>
-            </div>
-            { state.openedStatuses[0] ? (
-              <div className={styled.authenticationServiceYesMobile}>
-                <div className={styled.authenticationServiceYesMobileData}>
-                  <span>Listing review online</span>
-                  <ul>
-                    <li>One listing review by an expert watchmaker & AI-tool</li>
-                    <li>Identify signs of fakes and defects by photos</li>
-                    <li>Seller background check</li>
-                  </ul>
-                </div>
-                <div className={styled.authenticationServiceYesMobileIcon}>
-                  <img src={YesIcon} alt="yes" />
-                </div>
-              </div>
-            ) : undefined
-            }
-            <Link to="/service1" className={styled.buyNowMobile}>BUY NOW</Link>
-          </div>
-          <div className={styled.authenticationServiceOneMobile}>
-            <div className={styled.authenticationServiceOneMobileInfo}>
-              <span className={styled.mostPopularMobile}>Most popular</span>
-              <div className={styled.authenticationServiceTopInfo}>
-                <img src={InfoIcon} alt="Info" />
-              </div>
-              {/* eslint-disable-next-line max-len */}
-              <span className={styled.authenticationServiceHeaderTitleMobile}>Physical Inspection & Authentication</span>
-              <div>
-                <button id="1" type="button" className={styled.openIcon} onClick={this.openCloseOneData}>
-                  <img id="1" src={state.openedStatuses[1] ? MinusIcon : PlusIcon} alt="plus" />
-                </button>
-              </div>
-            </div>
-            { state.openedStatuses[1] ? (
-              <>
-                <div className={styled.authenticationServiceYesMobile}>
-                  <div className={styled.authenticationServiceYesMobileData}>
+          {props.programs.map((program, index) => {
+            const isOpen = state.openedStatuses[index];
+            const servicesStatuses = props.statuses[index];
+            return (
+              <div className={styled.authenticationServiceOneMobile}>
+                <div className={styled.authenticationServiceOneMobileInfo}>
+                  {/* eslint-disable-next-line max-len */}
+                  {program.topText ? <span className={styled.mostPopularMobile}>{program.topText}</span> : undefined}
+                  <div className={styled.authenticationServiceTopInfo}>
                     {/* eslint-disable-next-line max-len */}
-                    <span>Physical Inspection and Authentication – <a>X datapoints, 1 business day</a></span>
-                    <ul>
-                      <li>Authentication & Condition report with a certificate</li>
-                      <li>Serial number check</li>
-                      <li>Theft, Fraud & Loss report</li>
-                    </ul>
+                    {program.price ? <span>{program.price}</span> : undefined}
+                    <img src={InfoIcon} alt="Info" />
                   </div>
-                  <div className={styled.authenticationServiceYesMobileIcon}>
-                    <img src={YesIcon} alt="yes" />
-                  </div>
-                </div>
-                <div className={styled.authenticationServiceYesMobile}>
-                  <div className={styled.authenticationServiceYesMobileData}>
-                    <span>Shipping & Returns</span>
-                    <ul>
-                      <li>FeDex tracked priority shipping & optional insurance</li>
-                      <li>Customs forms & declaration fulfillment support</li>
-                      <li>TEasy returns & refunds</li>
-                    </ul>
-                  </div>
-                  <div className={styled.authenticationServiceYesMobileIcon}>
-                    <img src={YesIcon} alt="yes" />
+                  {/* eslint-disable-next-line max-len */}
+                  <span className={styled.authenticationServiceHeaderTitleMobile}>{program.title}</span>
+                  <div>
+                    <button id={String(index)} type="button" className={styled.openIcon} onClick={this.openCloseOneData}>
+                      <img id={String(index)} src={isOpen ? MinusIcon : PlusIcon} alt="plus" />
+                    </button>
                   </div>
                 </div>
-              </>
-            ) : undefined
-            }
-            <Link to="/service2" className={styled.getQuoteMobile}>GET A QUOTE</Link>
-          </div>
-          <div className={styled.authenticationServiceOneMobile}>
-            <div className={styled.authenticationServiceOneMobileInfo}>
-              <div className={styled.authenticationServiceTopInfo}>
-                <img src={InfoIcon} alt="Info" />
+                {isOpen ? (servicesStatuses.map((serviceStatus, idx) => {
+                const service = props.services[idx];
+                return serviceStatus ? (
+                  <div className={styled.authenticationServiceYesMobile}>
+                    <div className={styled.authenticationServiceYesMobileData}>
+                      <span>{service.title}</span>
+                      <StyledList>
+                        {service.included}
+                      </StyledList>
+                    </div>
+                    <div className={styled.authenticationServiceYesMobileIcon}>
+                      <img src={YesIcon} alt="yes" />
+                    </div>
+                  </div>
+) : undefined;
+              })) : undefined}
               </div>
-              {/* eslint-disable-next-line max-len */}
-              <span className={styled.authenticationServiceHeaderTitleMobile}>All-in-one authentication & buying assistance</span>
-              <div>
-                <button id="2" type="button" className={styled.openIcon} onClick={this.openCloseOneData}>
-                  <img id="2" src={state.openedStatuses[2] ? MinusIcon : PlusIcon} alt="plus" />
-                </button>
-              </div>
-            </div>
-            <Link to="/service3" className={styled.getQuoteMobile}>GET A QUOTE</Link>
-          </div>
+);
+          })}
         </div>
       );
   }

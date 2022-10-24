@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Header from '../templates/header/component';
 import Footer from '../templates/footer/component';
-import ServicePage2Template from "../templates/service2-page/component";
+import ServicePage2Template from '../templates/service2-page/component';
 
 const Service2Page: FC = () => (
   <>
