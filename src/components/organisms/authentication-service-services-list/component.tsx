@@ -10,6 +10,7 @@ import Button from '../../atoms/buttons/component';
 import Picture from '../../atoms/picture/component';
 import { Link } from 'react-router-dom';
 import TrustpilotForm from '../trustpilot-form/component';
+import InfoBlueIcon from './info-blue.svg';
 
 class AuthenticationServiceServices extends React.Component <{
   services: {
@@ -90,8 +91,18 @@ class AuthenticationServiceServices extends React.Component <{
                   {/* eslint-disable-next-line max-len */}
                   {program.topText ? <span className={styled.popular}>{program.topText}</span> : undefined}
                   <div className={styled.authenticationServiceTopInfo}>
-                    {program.price ? <span>{program.price}</span> : undefined}
-                    <img src={InfoIcon} alt="Info" />
+                    {/* eslint-disable-next-line max-len */}
+                    {program.price ? <span className={styled.price}>{program.price}</span> : undefined}
+                    <div className={styled.informationRectangle}>
+                      <div className={styled.informationHidden}>
+                        <div className={styled.informationHiddenContent}>
+                          <img src={InfoBlueIcon} alt="Info" />
+                          {/* eslint-disable-next-line max-len */}
+                          <span>In addition, when you are not happy with our service, we will return your payment for our services. T&C applied.</span>
+                        </div>
+                      </div>
+                      <img src={InfoIcon} alt="Info" />
+                    </div>
                   </div>
                   <span className={styled.authenticationServiceHeaderTitle}>{program.title}</span>
                   <hr />
@@ -134,8 +145,17 @@ class AuthenticationServiceServices extends React.Component <{
                   {program.topText ? <span className={styled.mostPopularMobile}>{program.topText}</span> : undefined}
                   <div className={styled.authenticationServiceTopInfo}>
                     {/* eslint-disable-next-line max-len */}
-                    {program.price ? <span>{program.price}</span> : undefined}
-                    <img src={InfoIcon} alt="Info" />
+                    {program.price ? <span className={styled.price}>{program.price}</span> : undefined}
+                    <div className={styled.informationRectangle}>
+                      <div className={styled.informationHidden}>
+                        <div className={styled.informationHiddenContent}>
+                          <img src={InfoBlueIcon} alt="Info" />
+                          {/* eslint-disable-next-line max-len */}
+                          <span>In addition, when you are not happy with our service, we will return your payment for our services. T&C applied.</span>
+                        </div>
+                      </div>
+                      <img src={InfoIcon} alt="Info" />
+                    </div>
                   </div>
                   {/* eslint-disable-next-line max-len */}
                   <span className={styled.authenticationServiceHeaderTitleMobile}>{program.title}</span>

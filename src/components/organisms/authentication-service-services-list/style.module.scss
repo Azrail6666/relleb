@@ -130,7 +130,7 @@
   display: flex;
   align-items: flex-start;
   width: 100%;
-  span {
+  span.price {
     font-weight: 600;
     font-size: 16px;
     @include mmin($laptop) {
@@ -144,9 +144,14 @@
   img {
     width: 16px;
     height: 16px;
+    margin-right: 10px;
     @include mmin($laptop) {
       width: 20px;
       height: 20px;
+      margin-right: 0;
+    }
+    @include mmin-portrait($phone) {
+      margin-right: 10px;
     }
     margin-left: auto;
   }
@@ -343,4 +348,92 @@
     width: 15px;
     height: 15px;
   }
+}
+
+.informationRectangle {
+  margin-left: auto;
+  position: relative;
+}
+
+.informationRectangle:hover {
+  .informationHidden {
+    display: block;
+  }
+}
+
+.informationHidden {
+  display: none;
+  position: absolute;
+  top: -155px;
+  @include mmin-portrait($phone) {
+    top: -128px;
+  }
+  right: -60px;
+  width: 300px;
+  z-index: 999999;
+}
+.informationHiddenContent {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #3760EF;
+  border-radius:10px;
+  width: 250px;
+  @include mmin($laptop) {
+    width: 300px;
+  }
+  padding:20px;
+  position:relative;
+  background: #FFF;
+  span {
+    font-weight: 400;
+    font-size: 12px;
+    @include mmin($laptop) {
+    font-size: 14px;
+    }
+
+    @include mmin-portrait($phone) {
+      font-size: 10px;
+    }
+  }
+  img {
+    @include mmin-portrait($phone) {
+      width: 10px;
+      height: 10px;
+    }
+    width: 15px;
+    height: 15px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+.informationHiddenContent:before {
+  border:12px solid transparent;
+  border-top-color: #3760EF;
+  position:absolute;
+  top:calc(100% + 1px);
+  right: 15px;
+  @include mmin($laptop) {
+    right: 60px;
+  }
+  @include mmin-portrait($phone) {
+    right: 15px;
+  }
+  content:'';
+}
+
+.informationHiddenContent:after {
+  border: 12px solid transparent;
+  border-top-color: #FFF;
+  position:absolute;
+  top: 100%;
+  right: 15px;
+  @include mmin($laptop) {
+    right: 60px;
+  }
+  @include mmin-portrait($phone) {
+    right: 15px;
+  }
+  content:'';
 }

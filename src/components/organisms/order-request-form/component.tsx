@@ -29,6 +29,8 @@ class OrderRequestForm extends React.Component<{
     isTheftFraudLossStatus: boolean,
     suggestAlternativeStatus: boolean,
 }> {
+    private commentsElement: React.RefObject<HTMLTextAreaElement>;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -37,6 +39,8 @@ class OrderRequestForm extends React.Component<{
             isTheftFraudLossStatus: props.isTheftFraudLossStatus,
             suggestAlternativeStatus: props.suggestAlternativeStatus,
         };
+
+        this.commentsElement = React.createRef();
         this.validateForm = this.validateForm.bind(this);
         this.changeValue = this.changeValue.bind(this);
         this.addNewInput = this.addNewInput.bind(this);
@@ -99,6 +103,7 @@ class OrderRequestForm extends React.Component<{
         this.setState({
             comments: target.value,
         });
+        this.adjustHeightTextarea();
     }
 
     changeOption(optionName: string, currentValue: string | boolean) {
@@ -106,6 +111,10 @@ class OrderRequestForm extends React.Component<{
         this.setState({
             [optionName]: currentValue,
         });
+    }
+
+    adjustHeightTextarea() {
+        this.commentsElement.current!.style.height = (this.commentsElement.current!.scrollHeight > this.commentsElement.current!.clientHeight) ? `${this.commentsElement.current!.scrollHeight}px` : '60px';
     }
 
     render() {
@@ -145,7 +154,14 @@ class OrderRequestForm extends React.Component<{
               })}
             <button type="button" className={styled.addNewLine} onClick={this.addNewInput}>+ Add one more listing</button>
           </div>
-          <input className={styled.mainInput} placeholder="Comments (optional)" value={state.comments} onChange={this.changeValueComments} />
+          <textarea
+            className={styled.mainInput}
+            placeholder="Comments (optional)"
+            value={state.comments}
+            onChange={this.changeValueComments}
+            ref={this.commentsElement}
+            rows={1}
+          />
           {props.isTheftFraudLoss ? (
             <OptionsWithLabel
               name="isTheftFraudLossStatus"
