@@ -1,6 +1,7 @@
 {
   "name": "Markup Relleb",
   "version": "0.1.0",
+  "homepage": "https://Azrail6666.github.io/relleb",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
